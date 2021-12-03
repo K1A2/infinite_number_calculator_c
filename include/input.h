@@ -3,5 +3,4 @@
 #include "express/number.h"
 
 ExpressHeadTail* read_and_anlyze(char *filename);
-ErrorOk detect_error(char ch);
-int is_digit(char ch);
+EXPRESSION_TYPE is_digit(char ch);

@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include "include/input.h"
-#include "include/express/number.h"
 
 int main(void) {
     char strs[2][20] = {"input", "input_error1"};
