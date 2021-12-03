@@ -1,6 +1,7 @@
 #include <stdio.h>
+#include "include/input.h"
 
 int main(void) {
-    printf("test\n");
+    readFile();
     return 0;
 }
