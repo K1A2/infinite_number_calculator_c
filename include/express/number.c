@@ -1,6 +1,38 @@
 #include "number.h"
 #include <stdio.h>
 
+ExpressHeadTail* init_expression() {
+    Expression *head;
+    Expression *tail;
+
+    head = (Expression*)malloc(sizeof(Expression));
+    tail = (Expression*)malloc(sizeof(Expression));
+    head->prev = head;
+    head->next = tail;
+    tail->prev = head;
+    tail->next = tail;
+
+    head->data = NULL;
+    tail->data = NULL;
+
+    ExpressHeadTail eht;
+    eht.head = head;
+    eht.tail = tail;
+
+    return &eht;
+}
+
+void expression_insert_tail(EXPRESSION_TYPE type, Number *data, char opr, Expression* node) {
+	Expression *newNode = (Expression*)malloc(sizeof(Expression));	
+	newNode->data = data;	
+    newNode->type = type;
+    newNode->opr = opr;
+	node->prev->next = newNode;
+	newNode->prev = node->prev;
+	newNode->next = node;
+	node->prev = newNode;
+}
+
 Number* init_number() {
     Digits *head_up;
     Digits *tail_up;

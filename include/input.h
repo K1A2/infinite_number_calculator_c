@@ -1,4 +1,7 @@
 #include <stdio.h>
+#include "error.h"
+#include "express/number.h"
 
-void readFile(char *filename);
-void detect_error(char ch);
+ExpressHeadTail* read_and_anlyze(char *filename);
+ErrorOk detect_error(char ch);
+int is_digit(char ch);
