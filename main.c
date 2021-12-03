@@ -3,7 +3,11 @@
 #include "include/express/number.h"
 
 int main(void) {
-    readFile();
+    char strs[2][20] = {"input", "input_error1"};
+    for (int i = 0;i < 2;i++) {
+        readFile(strs[i]);
+    }
+    
     Number number = *init_number();
     insert_head('1', number.up_decimal_point_head);
     insert_head('2', number.up_decimal_point_head);
