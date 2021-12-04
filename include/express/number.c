@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <stdbool.h>
 
 #include "number.h"
 
@@ -120,14 +121,39 @@ void insert_head(char value, Digits* node) {
 	node->next = newNode;
 }
 
+int get_count_digits(Digits* node, Digits* tail) {
+    Digits *now = node->next;
+    int count = 0;
+    while (now != tail) {
+        count += 1;
+        now = now->next;
+    }
+    return count;
+}
+
 void print_nodes_from_head(Digits* node, Digits* to_node) {
     Digits *tmp = node->next;
     while (tmp != to_node) {
-        printf("%c\n", tmp->data);
+        printf("%c", tmp->data);
         tmp = tmp->next;
     }
 }
 
 void print_all(ExpressHeadTail expHT) {
-    
+    Expression *now = expHT.head->next;
+    while (now != expHT.tail) {
+        if (now->type == TYPE_DIGIT) {
+            Number numbers = now->data;
+            if (!numbers.isPositive) {
+                printf(" -");
+            }
+            print_nodes_from_head(numbers.up_decimal_point_head, numbers.up_decimal_point_tail);
+            putchar('.');
+            print_nodes_from_head(numbers.down_decimal_point_head, numbers.down_decimal_point_tail);
+        } else {
+            printf("%c", now->opr);
+        }
+        now = now->next;
+    }
+    putchar('\n');
 }

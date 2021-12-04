@@ -10,6 +10,7 @@ typedef struct Digits {
 } Digits;
 
 typedef struct {
+    bool isPositive;
     Digits *up_decimal_point_head;
     Digits *down_decimal_point_head;
     Digits *up_decimal_point_tail;
@@ -28,6 +29,8 @@ typedef struct {
     Expression *head;
     Expression *tail;
 } ExpressHeadTail;
+
+int get_count_digits(Digits* node, Digits* tail);
 
 Number init_number();
 void insert_tail(char value, Digits* node);
