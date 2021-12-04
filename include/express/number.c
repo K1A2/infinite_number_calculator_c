@@ -1,5 +1,7 @@
-#include "number.h"
+#include <stdlib.h>
 #include <stdio.h>
+
+#include "number.h"
 
 ExpressHeadTail init_expression() {
     Expression *head;
@@ -124,4 +126,8 @@ void print_nodes_from_head(Digits* node, Digits* to_node) {
         printf("%c\n", tmp->data);
         tmp = tmp->next;
     }
+}
+
+void print_all(ExpressHeadTail expHT) {
+    
 }

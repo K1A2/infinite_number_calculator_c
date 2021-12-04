@@ -1,3 +1,7 @@
+#include <stdio.h>
+
+#include "express/number.h"
+#include "error.h"
 #include "input.h"
 
 EXPRESSION_TYPE is_digit(char ch) {
@@ -16,9 +20,10 @@ ExpressHeadTail* read_and_anlyze(char *filename) {
     ExpressHeadTail eht = init_expression();
     Number number;
     int is_number = 0;
+    int is_decimal_show = 0;
 
     if (fp == NULL) {
-        printf("file open error\n");
+        alert_error(ERROR_FILE_IO);
         return NULL;
     } else {
         while ((in_ch = fgetc(fp)) != EOF) {
@@ -32,7 +37,11 @@ ExpressHeadTail* read_and_anlyze(char *filename) {
                         number = init_number();
                         is_number = 1;
                     }
-                    insert_tail(in_ch, number.up_decimal_point_tail);
+                    if (is_decimal_show == 0) {
+                        insert_tail(in_ch, number.up_decimal_point_tail);
+                    } else {
+                        insert_tail(in_ch, number.down_decimal_point_tail);
+                    }
                 } else {
                     if (is_number == 1) {
                         expression_insert_tail(TYPE_DIGIT, number, ' ', eht.tail);

@@ -1,5 +1,3 @@
-#include <stdlib.h>
-
 typedef enum {
     TYPE_DIGIT,
     TYPE_OPR
@@ -41,3 +39,4 @@ ExpressHeadTail init_expression();
 void expression_insert_tail(EXPRESSION_TYPE type, Number data, char opr, Expression* node);
 
 void release_all(ExpressHeadTail exp);
+void print_all(ExpressHeadTail expHT);
