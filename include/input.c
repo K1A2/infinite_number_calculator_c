@@ -46,7 +46,7 @@ bool *is_positive_num: 양수인지 여부 주소값
 bool *is_decimal_show: 소수점이 보였는지 여부 주소값
 */
 void add_number(Number *number, Expression* tail, bool *is_number_struct, bool *is_positive_num, bool *is_decimal_show) {
-    expression_insert_tail(TYPE_DIGIT, number, ' ', tail); // 입력 되던 숫자 추가
+    expression_insert_tail_new_node(TYPE_DIGIT, number, ' ', tail); // 입력 되던 숫자 추가
     *is_number_struct = false; // 숫자가 입력중인지 여부 false로 초기화
     *is_positive_num = true; // 숫자가 양수인지 여부 true 초기화
     *is_decimal_show = false; // 소숫점이 보였는지 여부 false로 초기화
@@ -139,11 +139,11 @@ ExpressHeadTail* read_and_anlyze(char *filename) {
                                 is_positive_num = false;
                                 digit_insert_tail('1', number->up_decimal_point_tail);
                                 add_number(number, eht->tail, &is_number_struct, &is_positive_num, &is_decimal_show);
-                                expression_insert_tail(TYPE_OPR, NULL, '*', eht->tail);
-                                expression_insert_tail(TYPE_OPR, NULL, in_ch, eht->tail);
+                                expression_insert_tail_new_node(TYPE_OPR, NULL, '*', eht->tail);
+                                expression_insert_tail_new_node(TYPE_OPR, NULL, in_ch, eht->tail);
                             } else {
                                 // ( 나오기 바로 전에 나온 연산자가 +일 경우 괄호만 추가하고 넘김
-                                expression_insert_tail(TYPE_OPR, NULL, in_ch, eht->tail);
+                                expression_insert_tail_new_node(TYPE_OPR, NULL, in_ch, eht->tail);
                             }
                             is_left_bracket = true;
                         } else {
@@ -175,10 +175,10 @@ ExpressHeadTail* read_and_anlyze(char *filename) {
                                 if (is_right_bracket) {
                                     // 이전에 ) 가 입력된 적이 있다면 * 연산자 추가
                                     // 예. (32.44+33.3)49.44 -> (32.44+33.3)*49.44 로 변환
-                                    expression_insert_tail(TYPE_OPR, NULL, '*', eht->tail); // * 연산자 추가
+                                    expression_insert_tail_new_node(TYPE_OPR, NULL, '*', eht->tail); // * 연산자 추가
                                 }
                                 add_number(number, eht->tail, &is_number_struct, &is_positive_num, &is_decimal_show); // 입력 됬던 숫자 추가
-                                expression_insert_tail(TYPE_OPR, NULL, in_ch, eht->tail); // 현재 입력된 연산자 - 추가
+                                expression_insert_tail_new_node(TYPE_OPR, NULL, in_ch, eht->tail); // 현재 입력된 연산자 - 추가
                             } else {
                                 // 직전에 숫자가 입력 중이 아니었다면
                                 if (is_first || count_op_continue == 2) {
@@ -190,7 +190,7 @@ ExpressHeadTail* read_and_anlyze(char *filename) {
                                     }
                                 } else if (count_op_continue == 1) {
                                     // 직전에 다른 연산자가 나오지 않았을 경우 연산자로 판별
-                                    expression_insert_tail(TYPE_OPR, NULL, in_ch, eht->tail); // 현재 입력된 연산자 - 추가
+                                    expression_insert_tail_new_node(TYPE_OPR, NULL, in_ch, eht->tail); // 현재 입력된 연산자 - 추가
                                 } else {
                                     // 연속으로 나온 연산자 개수가 3개 이상이라면 오류 발생 (예. 43-++43, 23+--43 등)
                                     return print_error(eht, ERROR_TOO_MANY_OPERATOR, fp);
@@ -205,7 +205,7 @@ ExpressHeadTail* read_and_anlyze(char *filename) {
                                 if (is_right_bracket) {
                                     // 직전에 ) 괄호가 입력되었을 때 * 연산자 추가
                                     // 예) (444.33-33)33.3+122.323 -> (444.33-33)*33.3+122.323 처리
-                                    expression_insert_tail(TYPE_OPR, NULL, '*', eht->tail);
+                                    expression_insert_tail_new_node(TYPE_OPR, NULL, '*', eht->tail);
                                 }
                                 if (is_number_struct) {
                                     // 이전에 숫자가 입력된 적이 있다면
@@ -213,11 +213,11 @@ ExpressHeadTail* read_and_anlyze(char *filename) {
                                     if (!is_left_bracket) {
                                         // ( 가 숫자 다음에 처음 나온거라면 * 기호 추가
                                         // 예) 333.22(444.33-33) -> 333.22*(444.33-33) 처리
-                                        expression_insert_tail(TYPE_OPR, NULL, '*', eht->tail);
+                                        expression_insert_tail_new_node(TYPE_OPR, NULL, '*', eht->tail);
                                     }
                                 }
                             }
-                            expression_insert_tail(TYPE_OPR, NULL, in_ch, eht->tail); // 현재 입력된 ( 추가
+                            expression_insert_tail_new_node(TYPE_OPR, NULL, in_ch, eht->tail); // 현재 입력된 ( 추가
                             count_op_continue = 0; // 연산자가 연속으로 나온 횟수 0으로 초기화. (는 연산자 기호가 아님.
                             is_first = true; // ( 기호 다음은 식의 처음 부분이라고 판단. 식의 처음 부분과 같이 연산자가 연속 2개 이상 나올 수 없기 때문.
                             is_left_bracket = true; // ( 가 나왔는지 여부 true
@@ -241,11 +241,11 @@ ExpressHeadTail* read_and_anlyze(char *filename) {
                                     if (is_right_bracket) {
                                         // 숫자 앞에 ) 가 있었다면 * 기호 추가
                                         // 예) (444.33-33)33.3+122.323 -> (444.33-33)*33.3+122.323 처리
-                                        expression_insert_tail(TYPE_OPR, NULL, '*', eht->tail);
+                                        expression_insert_tail_new_node(TYPE_OPR, NULL, '*', eht->tail);
                                     }
                                     add_number(number, eht->tail, &is_number_struct, &is_positive_num, &is_decimal_show); // 숫자 추가
                                 }
-                                expression_insert_tail(TYPE_OPR, NULL, in_ch, eht->tail); // ) 기호 추가
+                                expression_insert_tail_new_node(TYPE_OPR, NULL, in_ch, eht->tail); // ) 기호 추가
                                 count_op_continue = 0; // 연산자가 연속으로 나온 횟수 0으로 초기화. ) 는 연산자 기호가 아님.
                                 is_first = false; // ) 다음은 식의 처음 부분이 아니라고 판단.
                             }
@@ -264,10 +264,10 @@ ExpressHeadTail* read_and_anlyze(char *filename) {
                                     if (is_right_bracket) {
                                         // ) 가 숫자 앞에 있다면 * 연산자 추가
                                         // 예) (444.33-33)33.3+122.323 -> (444.33-33)*33.3+122.323 처리
-                                        expression_insert_tail(TYPE_OPR, NULL, '*', eht->tail);
+                                        expression_insert_tail_new_node(TYPE_OPR, NULL, '*', eht->tail);
                                     }
                                     add_number(number, eht->tail, &is_number_struct, &is_positive_num, &is_decimal_show); // 숫자 추가
-                                    expression_insert_tail(TYPE_OPR, NULL, in_ch, eht->tail);
+                                    expression_insert_tail_new_node(TYPE_OPR, NULL, in_ch, eht->tail);
                                 } else {
                                     // 앞에 숫자가 없다면 오류 처리
                                     // 예) *443
@@ -287,7 +287,7 @@ ExpressHeadTail* read_and_anlyze(char *filename) {
             if (is_right_bracket) {
                 // ) 가 숫자 앞에 있다면 * 연산자 추가
                 // 예) (444.33-33)33.3+122.323 -> (444.33-33)*33.3+122.323 처리
-                expression_insert_tail(TYPE_OPR, NULL, '*', eht->tail);
+                expression_insert_tail_new_node(TYPE_OPR, NULL, '*', eht->tail);
             }
             add_number(number, eht->tail, &is_number_struct, &is_positive_num, &is_decimal_show);
         }

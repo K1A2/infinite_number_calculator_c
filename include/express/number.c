@@ -64,6 +64,19 @@ Number *init_number() {
 }
 
 /*
+기존에 존재하던 Expression 구조체를 Expression 링크드 리스트의 맨 뒤에 추가하는 함수
+
+Expression *newNode: Expression 링크드 리스트에 추가할 Expression 구조체
+Expression* node: Expression 링크드 리스트의 tail
+*/
+void expression_insert_tail(Expression *newNode, Expression* node) {
+	node->prev->next = newNode;
+	newNode->prev = node->prev;
+	newNode->next = node;
+	node->prev = newNode;
+}
+
+/*
 Expression 구조체를 Expression 링크드 리스트의 맨 뒤에 추가하는 함수
 
 EXPRESSION_TYPE type: 숫자인지 연산자인지 여부
@@ -71,15 +84,12 @@ Number *data: 숫자일 때 Number 구조체
 char opr: 연사자일때 연산자 종류
 Expression* node: Expression 링크드 리스트의 tail
 */
-void expression_insert_tail(EXPRESSION_TYPE type, Number *data, char opr, Expression* node) {
-	Expression *newNode = (Expression*)malloc(sizeof(Expression));	
+void expression_insert_tail_new_node(EXPRESSION_TYPE type, Number *data, char opr, Expression* node) {
+    Expression *newNode = (Expression*)malloc(sizeof(Expression));	
 	newNode->data = data;
     newNode->type = type;
     newNode->opr = opr;
-	node->prev->next = newNode;
-	newNode->prev = node->prev;
-	newNode->next = node;
-	node->prev = newNode;
+    expression_insert_tail(newNode, node);
 }
 
 /*
@@ -193,12 +203,14 @@ void print_all(ExpressHeadTail *expHT) {
     while (now != expHT->tail) {
         if (now->type == TYPE_DIGIT) {
             Number *numbers = now->data;
+            putchar(' ');
             if (!numbers->isPositive) {
-                printf(" -");
+                putchar('-');
             }
             print_nodes_from_head(numbers->up_decimal_point_head, numbers->up_decimal_point_tail);
             putchar('.');
             print_nodes_from_head(numbers->down_decimal_point_head, numbers->down_decimal_point_tail);
+            putchar(' ');
         } else {
             printf("%c", now->opr);
         }

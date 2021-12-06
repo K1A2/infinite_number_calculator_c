@@ -48,6 +48,9 @@ void alert_error(ERROR_TYPE type) {
         case ERROR_BRACKERS_COUNT_NOT_SAME:
             printf("ERROR: The number of left brackets and right brackets is different.\n");
             break;
+        case ERROR_RIGHT_BRACKET_FRIST:
+            printf("ERROR: The right bracket came out before the left bracket.\n");
+            break;
     }
 }
 

@@ -39,7 +39,8 @@ void digit_insert_tail(char value, Digits* node);
 void release_numbers(Number *number);
 
 ExpressHeadTail *init_expression();
-void expression_insert_tail(EXPRESSION_TYPE type, Number *data, char opr, Expression* node);
+void expression_insert_tail(Expression *newNode, Expression* node);
+void expression_insert_tail_new_node(EXPRESSION_TYPE type, Number *data, char opr, Expression* node);
 
 void release_all(ExpressHeadTail *exp);
 void print_all(ExpressHeadTail *expHT);
