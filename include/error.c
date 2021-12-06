@@ -37,6 +37,9 @@ void alert_error(ERROR_TYPE type) {
         case ERROR_OPERATOR_FIRST_ERROR:
             printf("ERROR: Operators can only one in first position.\n");
             break;
+        case ERROR_NOTHING_IN_BRACKETS:
+            printf("ERROR: There's nothing in barckets.\n");
+            break;
     }
 }
 

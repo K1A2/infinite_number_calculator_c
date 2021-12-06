@@ -58,7 +58,6 @@ Number init_number() {
 }
 
 void expression_insert_tail(EXPRESSION_TYPE type, Number data, char opr, Expression* node) {
-    
 	Expression *newNode = (Expression*)malloc(sizeof(Expression));	
 	newNode->data = data;
     newNode->type = type;
