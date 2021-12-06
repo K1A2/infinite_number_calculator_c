@@ -3,7 +3,11 @@
 ## 실행
 ```
 gcc -o main.out main.c include/input.c include/express/number.c include/error.c
+./main.out
 ```
+
+### 입력 식 수정하기
+input 파일에서 식을 수정하면 됩니다.
 
 ## 기능
 
