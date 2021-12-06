@@ -18,7 +18,7 @@ typedef struct {
 } Number;
 
 typedef struct Expression {
-    Number data;
+    Number *data;
     char opr;
     EXPRESSION_TYPE type;
     struct Expression *next;
@@ -32,14 +32,14 @@ typedef struct {
 
 int get_count_digits(Digits* node, Digits* tail);
 
-Number init_number();
+Number *init_number();
 void insert_tail(char value, Digits* node);
 void print_nodes_from_head(Digits* node, Digits* to_node);
 void insert_head(char value, Digits* node);
-void release_numbers(Number number);
+void release_numbers(Number *number);
 
-ExpressHeadTail init_expression();
-void expression_insert_tail(EXPRESSION_TYPE type, Number data, char opr, Expression* node);
+ExpressHeadTail *init_expression();
+void expression_insert_tail(EXPRESSION_TYPE type, Number *data, char opr, Expression* node);
 
 void release_all(ExpressHeadTail exp);
 void print_all(ExpressHeadTail expHT);

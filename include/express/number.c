@@ -4,7 +4,7 @@
 
 #include "number.h"
 
-ExpressHeadTail init_expression() {
+ExpressHeadTail *init_expression() {
     Expression *head;
     Expression *tail;
 
@@ -18,21 +18,21 @@ ExpressHeadTail init_expression() {
     head->type = -1;
     tail->type = -1;
 
-    ExpressHeadTail eht;
-    eht.head = head;
-    eht.tail = tail;
+    ExpressHeadTail *eht = malloc(sizeof(ExpressHeadTail));
+    eht->head = head;
+    eht->tail = tail;
 
     return eht;
 }
 
-Number init_number() {
+Number *init_number() {
     Digits *head_up;
     Digits *tail_up;
     int size_up = 0;
     Digits *head_down;
     Digits *tail_down;
     int size_down = 0;
-    Number numbers;
+    Number *numbers = malloc(sizeof(Number));
 
     head_up = (Digits*)malloc(sizeof(Digits));
     tail_up = (Digits*)malloc(sizeof(Digits));
@@ -49,15 +49,15 @@ Number init_number() {
     tail_down->next = tail_down;
     size_down = 0;
 
-    numbers.up_decimal_point_head = head_up;
-    numbers.down_decimal_point_head = head_down;
-    numbers.up_decimal_point_tail = tail_up;
-    numbers.down_decimal_point_tail = tail_down;
+    numbers->up_decimal_point_head = head_up;
+    numbers->down_decimal_point_head = head_down;
+    numbers->up_decimal_point_tail = tail_up;
+    numbers->down_decimal_point_tail = tail_down;
 
     return numbers;
 }
 
-void expression_insert_tail(EXPRESSION_TYPE type, Number data, char opr, Expression* node) {
+void expression_insert_tail(EXPRESSION_TYPE type, Number *data, char opr, Expression* node) {
 	Expression *newNode = (Expression*)malloc(sizeof(Expression));	
 	newNode->data = data;
     newNode->type = type;
@@ -68,22 +68,22 @@ void expression_insert_tail(EXPRESSION_TYPE type, Number data, char opr, Express
 	node->prev = newNode;
 }
 
-void release_numbers(Number number) {
-    Digits* temp = number.up_decimal_point_head;
+void release_numbers(Number *number) {
+    Digits* temp = number->up_decimal_point_head;
 	Digits* deleteNode;
-	while (temp != number.up_decimal_point_tail) {
+	while (temp != number->up_decimal_point_tail) {
 		deleteNode = temp;
 		temp = temp->next;
 		free(deleteNode);
 	}
-    free(number.up_decimal_point_tail);
-    temp = number.down_decimal_point_head;
-	while (temp != number.down_decimal_point_tail) {
+    free(number->up_decimal_point_tail);
+    temp = number->down_decimal_point_head;
+	while (temp != number->down_decimal_point_tail) {
 		deleteNode = temp;
 		temp = temp->next;
 		free(deleteNode);
 	}
-    free(number.down_decimal_point_tail);
+    free(number->down_decimal_point_tail);
 }
 
 void release_all(ExpressHeadTail exp) {
@@ -142,13 +142,13 @@ void print_all(ExpressHeadTail expHT) {
     Expression *now = expHT.head->next;
     while (now != expHT.tail) {
         if (now->type == TYPE_DIGIT) {
-            Number numbers = now->data;
-            if (!numbers.isPositive) {
+            Number *numbers = now->data;
+            if (!numbers->isPositive) {
                 printf(" -");
             }
-            print_nodes_from_head(numbers.up_decimal_point_head, numbers.up_decimal_point_tail);
+            print_nodes_from_head(numbers->up_decimal_point_head, numbers->up_decimal_point_tail);
             putchar('.');
-            print_nodes_from_head(numbers.down_decimal_point_head, numbers.down_decimal_point_tail);
+            print_nodes_from_head(numbers->down_decimal_point_head, numbers->down_decimal_point_tail);
         } else {
             printf("%c", now->opr);
         }
