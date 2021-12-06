@@ -5,6 +5,11 @@
 #include "express/number.h"
 #include "error.h"
 
+/*
+에러를 출력하는 함수
+
+ERROR_TYPE type: 에러 종류
+*/
 void alert_error(ERROR_TYPE type) {
     switch (type) {
         case ERROR_INVALID_CHARACTER:
@@ -35,14 +40,22 @@ void alert_error(ERROR_TYPE type) {
             printf("ERROR: Multiolication operator wrong position.\n");
             break;
         case ERROR_OPERATOR_FIRST_ERROR:
-            printf("ERROR: Operators can only one in first position.\n");
+            printf("ERROR: Only one operator can exist in front of the expression or left bracket.\n");
             break;
         case ERROR_NOTHING_IN_BRACKETS:
             printf("ERROR: There's nothing in barckets.\n");
             break;
+        case ERROR_BRACKERS_COUNT_NOT_SAME:
+            printf("ERROR: The number of left brackets and right brackets is different.\n");
+            break;
     }
 }
 
+/*
+허용된 문자열인지 검사하는 함수
+
+char ch: 검사 할 문자
+*/
 ErrorOk detect_error_invalid_chracter(char ch) {
     if (('0' <= ch && '9' >= ch) || ch == '+' || ch == '*' || ch == '-' || ch == '.' || ch == '(' || ch == ')') {
         return OK;
@@ -51,6 +64,6 @@ ErrorOk detect_error_invalid_chracter(char ch) {
     }
 }
 
-ErrorOk detect_error_all_cases(ExpressHeadTail expht) {
+// ErrorOk detect_error_all_cases(ExpressHeadTail expht) {
 
-}
+// }

@@ -4,7 +4,6 @@ typedef enum {
     ERROR_INVALID_CHARACTER,
     ERROR_TOO_MANY_DECIMAL_POINT,
     ERROR_BRACKERS_COUNT_NOT_SAME,
-    ERROR_RIGHT_BRACKET_FIRST,
     ERROR_TOO_MANY_OPERATOR,
     ERROR_TOO_MANY_OPERATOR_BEFORE_BRACKET,
     ERROR_OPERATOR_WRONG_ORDER,
@@ -17,4 +16,4 @@ typedef enum {
 
 void alert_error(ERROR_TYPE type);
 ErrorOk detect_error_invalid_chracter(char ch);
-ErrorOk detect_error_all_cases(ExpressHeadTail expht);
+// ErrorOk detect_error_all_cases(ExpressHeadTail expht);

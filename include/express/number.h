@@ -35,11 +35,11 @@ int get_count_digits(Digits* node, Digits* tail);
 Number *init_number();
 void insert_tail(char value, Digits* node);
 void print_nodes_from_head(Digits* node, Digits* to_node);
-void insert_head(char value, Digits* node);
+void digit_insert_tail(char value, Digits* node);
 void release_numbers(Number *number);
 
 ExpressHeadTail *init_expression();
 void expression_insert_tail(EXPRESSION_TYPE type, Number *data, char opr, Expression* node);
 
-void release_all(ExpressHeadTail exp);
-void print_all(ExpressHeadTail expHT);
+void release_all(ExpressHeadTail *exp);
+void print_all(ExpressHeadTail *expHT);
