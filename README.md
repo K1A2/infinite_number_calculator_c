@@ -1,8 +1,8 @@
 # 무한소수 계산기
 
 ## 실행
-```
-gcc -o main.out main.c include/input.c include/express/number.c include/error.c
+```shell
+gcc -o main.out main.c include/input.c include/express/number.c include/error.c include/express/stack.c
 
 ./main.out
 ```
@@ -35,47 +35,93 @@ input 파일에서 식을 수정하면 됩니다.
 
 ## 구현 사항
 
-### 입력 오류 검출
+### 1차 구현
 
-#### ERROR_INVALID_CHARACTER
+파일에서 식 입력 받고 입력 된 식 링크드 리스트로 읽어오기, 식 오류 검출하기. 입력된 식 후위 연산자로 변환하기
 
-0-9, +, -, *, () 이외의 입력
+#### 파일에서 식 입력 받아 링크드 리스트로 변환
 
-#### ERROR_FILE_IO
+##### 관련 파일
 
-파일 입출력 오류
+* [include/input.c](#includeinputc)
+* include/express/number.c
 
-#### ERROR_TOO_MANY_DECIMAL_POINT
+##### 사용된 기술
 
-소수점이 여러개 일때
+* 구조체
+* 이중 링크드 리스트
+* 포인터
+* 열거형(enum)
 
-#### ERROR_TOO_MANY_OPERATOR
+#### 식 오류 검출하기
 
-연산자가 연속으로 여러게 있을때. +-+, +* 등
+##### 관련 파일
 
-#### ERROR_OPERATOR_WRONG_ORDER
+* include/error.c
 
-연산자가 순서에 맞지 않게 나올때
+##### 사용된 기술
 
-#### ERROR_TOO_MANY_OPERATOR_BEFORE_BRACKET
+* 열거형(enum)
 
-괄호가 열리고 닫히기 전에 다른 연산자가 나올때
+#### 입력된 식 후위 연산자로 변환하기
 
-#### ERROR_RIGHT_BRACKET_WRONG_POSITION
+##### 관련 파일
 
-닫히는 괄호가 식의 맨 앞이나 열리는 괄호 앞에 있을때
+* include/express/numbr.c
+* include/express/stack.c
 
-#### ERROR_RIGHT_BRACKET_AFTER_OPERATOR
+##### 사용된 기술
 
-닫히는 괄호 앞에 연산자가 있을때
+* 구조체
+* 이중 링크드 리스트
+* 포인터
+* 열거형(enum)
 
-#### ERROR_MUTIPLE_OPERATOR_WRONG_POSITION
+### 2차 구현
 
-곱하기 기호가 식의 맨 앞에 나올때
+더하기, 빼기, 곱하기 연산. 나누기는 시간에 따라 구현 or 버림.
 
-#### ERROR_OPERATOR_FIRST_ERROR
+### 파일 설명
 
-맨 앞에 연산자가 여러개 나올때
+#### main.c
+
+메인
+
+#### include/input.c
+
+식 파일 입력과 링크드 리스트로 변환에 관여하는 파일
+
+#### include/error.c
+
+오류가 어떤 타입인지 출력하는 파일
+
+##### 에러 타입 종류 설명
+
+1. **ERROR_INVALID_CHARACTER** - 숫자, +, -, *, () 이외의 문자가 입력되는 경우
+2. **ERROR_FILE_IO** -식 파일을 읽어올 수 없는 경우
+3. **ERROR_TOO_MANY_DECIMAL_POINT** - 한 숫자에 소수점이 두 개 이상일 경우
+4. **ERROR_TOO_MANY_OPERATOR** - 한번에 너무 많은 연산자가 존재할 경우
+5. **ERROR_OPERATOR_WRONG_ORDER** - 연산자가 잘못 된 순서로 존재할 경우
+6. **ERROR_TOO_MANY_OPERATOR_BEFORE_BRACKET** - ( 직전에 2~3개 이상의 연산자가 존재할 경우
+7. **ERROR_RIGHT_BRACKET_WRONG_POSITION** - ) 가 식의 맨 앞에 나오는 경우
+8. **ERROR_RIGHT_BRACKET_AFTER_OPERATOR** - ) 앞에 연산자가 하나라도 존재하는 경우
+9. **ERROR_MUTIPLE_OPERATOR_WRONG_POSITION** - 곱하기 기호가 식의 맨 앞부분, ( 바로 뒤, 맨 마지막 부분에 존재하는 경우
+10. **ERROR_OPERATOR_FIRST_ERROR** - 식의 맨 앞이나 ( 바로 뒤에 있는 ( 기호 앞에는 하나의 연산자 (+, -) 만 나올 수 있음. * 기호나 여러 연산자가 나올 경우 오류 처리
+11. **ERROR_NOTHING_IN_BRACKETS** - 괄호 안에 아무것도 없는 경우
+12. **ERROR_BRACKERS_COUNT_NOT_SAME** - (와 )의 개수가 다른 경우
+13. **ERROR_RIGHT_BRACKET_FRIST** - ) 가 ( 보다 먼저 나올 경우 오류 처리
+
+#### include/express/number.c
+
+식과 숫자를 표현하는 구조체와 링크드 리스트를 정의하고 추가, 삭제 등 기능을 구현한 파일
+
+##### 식 표현 구조체 설명
+
+![ExpressHeadTail.drawio](/Users/k1a2/Documents/develop/infinite_decimal_calculator/img/ExpressHeadTail.drawio.png)
+
+#### include/express/stack.c
+
+스택을 구현하고 후위 연산식 변환 기능을 구현한 파일
 
 ## 평가 기준
 

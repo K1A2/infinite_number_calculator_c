@@ -66,7 +66,3 @@ ErrorOk detect_error_invalid_chracter(char ch) {
         return ERROR;
     }
 }
-
-// ErrorOk detect_error_all_cases(ExpressHeadTail expht) {
-
-// }

@@ -17,4 +17,3 @@ typedef enum {
 
 void alert_error(ERROR_TYPE type);
 ErrorOk detect_error_invalid_chracter(char ch);
-// ErrorOk detect_error_all_cases(ExpressHeadTail expht);

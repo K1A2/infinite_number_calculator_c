@@ -119,10 +119,30 @@ ExpressHeadTail* read_and_anlyze(char *filename) {
                     if (count_op_continue >= 2) {
                         // 연속으로 나온 연산자 개수가 3개 이상이라면 오류 발생 (예. 43-++43, 23+--43 등)
                         if (in_ch == '(') {
-                            // ( 입력 이전에 연산자가 연속으로 2개 이상이 나왔을때 오류 처리
-                            // 예. 34.43+-(3323*93.3)
-                            return print_error(eht, ERROR_TOO_MANY_OPERATOR_BEFORE_BRACKET, fp);
+                            count_left_brackets += 1; // ( 개수 +1
+                            count_op_continue = 0; // 연속으로 나온 연산자 개수 0으로 초기화
+                            if (prev_ch_first == '-') {
+                                // ( 나오기 바로 전에 나온 연산자가 -일 경우
+                                // 숫자 -1을 추가해 괄호 앞에 곱하는 형태로 추가
+                                // 예. -(332.33+33)-33 -> -1*(332.33+33)-33 로 변경
+                                init_number_struct(&number, &is_positive_num, &is_decimal_show, false, &is_number_struct, &is_left_bracket);
+                                is_positive_num = false;
+                                digit_insert_tail('1', number->up_decimal_point_tail);
+                                add_number(number, eht->tail, &is_number_struct, &is_positive_num, &is_decimal_show);
+                                expression_insert_tail_new_node(TYPE_OPR, NULL, '*', eht->tail);
+                                expression_insert_tail_new_node(TYPE_OPR, NULL, in_ch, eht->tail);
+                            } else if (prev_ch_first == '+') {
+                                // ( 나오기 바로 전에 나온 연산자가 +일 경우 괄호만 추가하고 넘김
+                                expression_insert_tail_new_node(TYPE_OPR, NULL, in_ch, eht->tail);
+                            } else {
+                                // ( 입력 이전에 연산자가 연속으로 2개 이상이 나왔을때 오류 처리
+                                // 예. 34.43+-(3323*93.3)
+                                return print_error(eht, ERROR_TOO_MANY_OPERATOR_BEFORE_BRACKET, fp);
+                            }
+                            is_left_bracket = true; // ( 출현 여부 true
+                            is_first = true; // 식이 첫 부분 인지
                         } else {
+                            // 연속으로 나온 연산자 개수가 3개 이상이라면 오류 발생 (예. 43-++43, 23+--43 등)
                             return print_error(eht, ERROR_TOO_MANY_OPERATOR, fp);
                         }
                     } else if(is_first && count_op_continue >= 1) {
