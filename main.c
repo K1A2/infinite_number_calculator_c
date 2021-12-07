@@ -5,6 +5,7 @@
 #include "include/error.h"
 #include "include/input.h"
 #include "include/express/stack.h"
+#include "include/calculator.h"
 
 int main(void) {
     char strs[1][50] = {"input"};

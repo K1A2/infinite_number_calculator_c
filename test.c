@@ -19,14 +19,30 @@ void t(Test *b) {
 
 int main(int argc, char const *argv[])
 {
-    Test a;
-    a.a = 10;
+    // Test a;
+    // a.a = 10;
 
-    printf("%p\n", &a);
-    printf("%p\n", a);
-    t(&a);
+    // printf("%p\n", &a);
+    // printf("%p\n", a);
+    // t(&a);
 
-    printf("%d\n", a.a);
+    // printf("%d\n", a.a);
+    for (char b = '(';b <= '9';b++) {
+        printf("%c\n", b);
+        unsigned char a = b, p = 0b10000000;
+        printf("%c\n", a);
+
+        for (int i = 0;i < 8;i++) {
+            if ((a & p) == p) {
+                printf("1");
+                // printf("%d\n", a & p);
+            } else {
+                printf("0");
+            }
+            p >>= 1;
+        }
+        putchar('\n');
+    }
 
     return 0;
 }

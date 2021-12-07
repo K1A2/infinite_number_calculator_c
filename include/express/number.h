@@ -4,7 +4,7 @@ typedef enum {
 } EXPRESSION_TYPE;
 
 typedef struct Digits {
-    char data;
+    unsigned char data;
     struct Digits *next;
     struct Digits *prev;
 } Digits;

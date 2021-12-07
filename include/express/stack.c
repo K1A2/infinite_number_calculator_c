@@ -66,6 +66,20 @@ char peek(Stack *target) {
     return target->next->data->opr;
 }
 
+void delete_stack(Stack *head) {
+    Stack *now = head->next;
+    if (now == NULL) {
+        free(head);
+    } else {
+        while (now->next != NULL) {
+            head->next = now->next;
+            free(now);
+            now = head->next;
+        }
+        free(head);
+    }
+}
+
 /*
 연산자의 우선순위를 반환하는 함수
 
@@ -89,10 +103,12 @@ int prec(char op) {
 
 ExpressHeadTail *eht: 메모리 해제를 진행할 노드 주소값 (인자값으로 받아온 ExpressHeadTail)
 ExpressHeadTail *eht2: 메모리 해제를 진행할 노드 주소값 (함수 안에서 새로 생성한 ExpressHeadTail)
+Stack *stack: 삭제 할 스택
 ERROR_TYPE type: 에러 종류
 */
-ExpressHeadTail* print_error_stack(ExpressHeadTail *eht, ExpressHeadTail *eht2, ERROR_TYPE type) {
+ExpressHeadTail* print_error_stack(ExpressHeadTail *eht, ExpressHeadTail *eht2, Stack *stack, ERROR_TYPE type) {
     alert_error(type);
+    delete_stack(stack);
     release_all(eht);
     release_all(eht2);
     return NULL;
@@ -137,15 +153,15 @@ ExpressHeadTail *infix_to_postfix(ExpressHeadTail *expht) {
             Expression *poped = pop(stack);
             if (poped == NULL) {
                 // stack 안에 아무것도 없을 경우 ( 보다 ) 가 먼저 나왔으므로 오류 처리
-                return print_error_stack(expht, result, ERROR_RIGHT_BRACKET_FRIST);
+                return print_error_stack(expht, result, stack, ERROR_RIGHT_BRACKET_FRIST);
             }
             while (poped->opr != '(') { // ( 이 나올 때 까지 반복
-                if (poped == NULL) {
-                    // stack 안에 아무것도 없을 경우 ( 보다 ) 가 먼저 나왔으므로 오류 처리
-                    return print_error_stack(expht, result, ERROR_RIGHT_BRACKET_FRIST);
-                }
                 expression_insert_tail(poped, result->tail); // ( 이 나올 때 까지 pop 후 후위 연산식 링크드 리스트에 추가
                 poped = pop(stack);
+                if (poped == NULL) {
+                    // stack 안에 아무것도 없을 경우 ( 보다 ) 가 먼저 나왔으므로 오류 처리
+                    return print_error_stack(expht, result, stack, ERROR_RIGHT_BRACKET_FRIST);
+                }
             }
         }
         now  = expht->head->next; // now를 head의 다음으로 지정
