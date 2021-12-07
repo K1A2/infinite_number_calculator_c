@@ -31,6 +31,8 @@ typedef struct {
 } ExpressHeadTail;
 
 int get_count_digits(Digits* node, Digits* tail);
+void deletee_zero_up_deciaml(Digits* head, Digits* tail);
+void deletee_zero_down_deciaml(Digits* head, Digits* tail);
 
 Number *init_number();
 void insert_tail(char value, Digits* node);

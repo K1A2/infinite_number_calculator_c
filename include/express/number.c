@@ -138,6 +138,32 @@ void release_all(ExpressHeadTail *exp) {
     free(exp);
 }
 
+void deletee_zero_up_deciaml(Digits* head, Digits* tail) {
+    Digits *now = head->next;
+    Digits *next;
+    while (now->next != tail && now->data == '0') {
+        now->prev->next = now->next;
+        now->next->prev = now->prev;
+        now->next = NULL;
+        now->prev = NULL;
+        free(now);
+        now = head->next;
+    }
+}
+
+void deletee_zero_down_deciaml(Digits* head, Digits* tail) {
+    Digits *now = tail->prev;
+    Digits *prev;
+    while (now->prev != head && now->data == '0') {
+        now->prev->next = now->next;
+        now->next->prev = now->prev;
+        now->next = NULL;
+        now->prev = NULL;
+        free(now);
+        now = tail->prev;
+    }
+}
+
 /*
 Digit 링크드 리스트의 맨 마지막 부분에 숫자를 추가하는 함수
 

@@ -147,7 +147,7 @@ ExpressHeadTail *infix_to_postfix(ExpressHeadTail *expht) {
                 expression_insert_tail(poped, result->tail); // ( 이 나올 때 까지 pop 후 후위 연산식 링크드 리스트에 추가
                 poped = pop(stack);
             }
-        } 
+        }
         now  = expht->head->next; // now를 head의 다음으로 지정
     }
 
