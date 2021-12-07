@@ -117,7 +117,7 @@ input 파일에서 식을 수정하면 됩니다.
 
 ##### 식 표현 구조체 설명
 
-![ExpressHeadTail.drawio](/Users/k1a2/Documents/develop/infinite_decimal_calculator/img/ExpressHeadTail.drawio.png)
+![ExpressHeadTail.drawio](./img/ExpressHeadTail.drawio.png)
 
 #### include/express/stack.c
 
