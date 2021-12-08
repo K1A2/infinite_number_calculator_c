@@ -14,12 +14,22 @@ int main(void) {
         if (exp != NULL) { // *exp가 null이면 식에 오류가 있음을 뜻함
             print_all(exp); // 변환 된 식을 출력
             exp = infix_to_postfix(exp); // 중위식 후위식으로 변환
-            putchar('\n');
-            if (exp != NULL) {
-                // 후위식 변환 과정에서 문제가 없었다면
-                print_all(exp);
-                release_all(exp);
-            }
+            print_all(exp);
+            // putchar('\n');
+            // if (exp != NULL) {
+            //     // 후위식 변환 과정에서 문제가 없었다면
+            //     print_all(exp);
+            //     Number *numbers = calculation(exp);
+            //     putchar('\n');
+            //     if (!numbers->isPositive) {
+            //         putchar('-');
+            //     }
+            //     print_nodes_from_head(numbers->up_decimal_point_head, numbers->up_decimal_point_tail);
+            //     putchar('.');
+            //     print_nodes_from_head(numbers->down_decimal_point_head, numbers->down_decimal_point_tail);
+            //     putchar('\n');
+            //     release_all(exp);
+            // }
         }
     }
     return 0;

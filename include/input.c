@@ -306,8 +306,8 @@ ExpressHeadTail* read_and_anlyze(char *filename) {
                             is_right_bracket = false;
                         }
                     }
-                    prev_ch_first = in_ch;
                 }
+                prev_ch_first = in_ch;
             }
         }
         if (is_number_struct) {

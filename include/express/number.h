@@ -35,12 +35,15 @@ void deletee_zero_up_deciaml(Digits* head, Digits* tail);
 void deletee_zero_down_deciaml(Digits* head, Digits* tail);
 
 Number *init_number();
-void insert_tail(char value, Digits* node);
+void digit_insert_head(char value, Digits* node);
 void print_nodes_from_head(Digits* node, Digits* to_node);
 void digit_insert_tail(char value, Digits* node);
 void release_numbers(Number *number);
+void release_numbers_concatenated(Number *number);
 
 ExpressHeadTail *init_expression();
+Expression *init_expression_empty_noode_number();
+void number_concatenate(Expression *exp);
 void expression_insert_tail(Expression *newNode, Expression* node);
 void expression_insert_tail_new_node(EXPRESSION_TYPE type, Number *data, char opr, Expression* node);
 

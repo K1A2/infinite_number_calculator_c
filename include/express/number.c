@@ -64,6 +64,26 @@ Number *init_number() {
 }
 
 /*
+숫자형 Expression 노드를 한개만 만들어 리턴하는 함수
+*/
+Expression *init_expression_empty_noode_number() {
+    Expression *exp = (Expression*)malloc(sizeof(Expression));
+    exp->next = NULL;
+    exp->prev = NULL;
+    exp->type = TYPE_DIGIT;
+    exp->opr = ' ';
+    exp->data = init_number();
+    return exp;
+}
+
+void number_concatenate(Expression *exp) {
+    if (get_count_digits(exp->data->down_decimal_point_head, exp->data->down_decimal_point_tail) > 0) {
+        exp->data->up_decimal_point_tail->prev->next = exp->data->down_decimal_point_head->next;
+        exp->data->down_decimal_point_head->next->prev = exp->data->up_decimal_point_tail->prev;
+    }
+}
+
+/*
 기존에 존재하던 Expression 구조체를 Expression 링크드 리스트의 맨 뒤에 추가하는 함수
 
 Expression *newNode: Expression 링크드 리스트에 추가할 Expression 구조체
@@ -116,6 +136,20 @@ void release_numbers(Number *number) {
     free(number);
 }
 
+void release_numbers_concatenated(Number *number) {
+    Digits* temp = number->up_decimal_point_head;
+	Digits* deleteNode;
+	while (temp != number->down_decimal_point_tail) {
+		deleteNode = temp;
+		temp = temp->next;
+		free(deleteNode);
+	}
+    free(number->up_decimal_point_tail);
+    free(number->down_decimal_point_head);
+    free(number->down_decimal_point_tail);
+    free(number);
+}
+
 /*
 모든 표현식을 메모리에서 해제하는 함수
 
@@ -138,6 +172,12 @@ void release_all(ExpressHeadTail *exp) {
     free(exp);
 }
 
+/*
+소수점 윗 자리수에 쓸데없는 0을 제거하는 함수. 0004433.43 -> 4433.43
+
+Digits* head: 0을 제거하려는 숫자의 시작부분
+Digits* tailㅣ 0을 제거하려는 숫자의 끝부분
+*/
 void deletee_zero_up_deciaml(Digits* head, Digits* tail) {
     Digits *now = head->next;
     Digits *next;
@@ -151,6 +191,12 @@ void deletee_zero_up_deciaml(Digits* head, Digits* tail) {
     }
 }
 
+/*
+소수점 아래 자리수에 쓸데없는 0을 제거하는 함수. 4433.43000 -> 4433.43
+
+Digits* head: 0을 제거하려는 숫자의 시작부분
+Digits* tailㅣ 0을 제거하려는 숫자의 끝부분
+*/
 void deletee_zero_down_deciaml(Digits* head, Digits* tail) {
     Digits *now = tail->prev;
     Digits *prev;
@@ -179,8 +225,13 @@ void digit_insert_tail(char value, Digits* node) {
 	node->prev = newNode;
 }
 
+/*
+Digit 링크드 리스트의 맨 앞 부분에 숫자를 추가하는 함수
 
-void insert_head(char value, Digits* node) {
+char value: 추가 할 숫자
+Digits* node: Digits 링크드 리스트의 head
+*/
+void digit_insert_head(char value, Digits* node) {
 	Digits* newNode = (Digits*)malloc(sizeof(Digits));
 	newNode->data = value;
 	node->next->prev = newNode;
