@@ -92,11 +92,12 @@ Expression *multiplication(Expression **a, Expression **b) {
     result->data->deciaml_point = (*a)->data->deciaml_point + (*b)->data->deciaml_point;
     Digits *now_b = (*b)->data->tail->prev;
     while (now_b != (*b)->data->head) {
+        unsigned int carry = 0;
         Digits *now_a = (*a)->data->tail->prev;
         Expression * tmp = init_expression();
         tmp->data->deciaml_point = result->data->deciaml_point;
         while (now_a != (*a)->data->head) {
-            
+            unsigned int num_res = now_a->data * now_b->data;
         }
     }
 }
