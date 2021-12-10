@@ -80,8 +80,6 @@ Expression *subtraction(Expression**a, Expression **b) {
 Expression *multiplication(Expression **a, Expression **b) {
     Expression *result = init_expression_empty_noode_number();
 
-    make_down_place_count_same(&((*a)->data), &((*b)->data), &(result->data));
-
     unsigned int a_total_count = get_count_digits((*a)->data->head, (*a)->data->tail), b_total_count = get_count_digits((*b)->data->head, (*b)->data->tail);
     if (a_total_count < b_total_count) {
         Expression *tmp = *a;
@@ -89,17 +87,46 @@ Expression *multiplication(Expression **a, Expression **b) {
         *b = tmp;
     }
 
-    result->data->deciaml_point = (*a)->data->deciaml_point + (*b)->data->deciaml_point;
     Digits *now_b = (*b)->data->tail->prev;
+
+    int ten = 0;
     while (now_b != (*b)->data->head) {
         unsigned int carry = 0;
         Digits *now_a = (*a)->data->tail->prev;
-        Expression * tmp = init_expression();
-        tmp->data->deciaml_point = result->data->deciaml_point;
+        Expression *tmp = init_expression_empty_noode_number();
+        tmp->data->deciaml_point = 0;
+
         while (now_a != (*a)->data->head) {
-            unsigned int num_res = now_a->data * now_b->data;
+            unsigned int num_res = (now_a->data - '0') * (now_b->data - '0');
+            num_res += carry;
+            carry = num_res / 10;
+            num_res %= 10;
+            digit_insert_head(num_res + '0', tmp->data->head);
+            now_a = now_a->prev;
         }
+
+        if (carry != 0) {
+            digit_insert_head(carry + '0', tmp->data->head);
+        }
+
+        for (int i = 0;i < ten;i++) {
+            digit_insert_tail('0', tmp->data->tail);
+        }
+
+        result = addition(&result, &tmp);
+        ten++;
+        now_b = now_b->prev;
     }
+
+    result->data->deciaml_point = (*a)->data->deciaml_point + (*b)->data->deciaml_point;
+    result->data->deciaml_point -= deletee_zero_down_deciaml(result->data->head, result->data->tail);
+
+    release_numbers(&((*a)->data));
+    release_numbers(&((*b)->data));
+    free(*a);
+    free(*b);
+
+    return result;
 }
 
 Number *print_error_calculation(ExpressHeadTail **expht, Stack **stack, Expression *one, Expression *two, Expression *result, ERROR_TYPE error) {
