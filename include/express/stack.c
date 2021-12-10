@@ -66,17 +66,17 @@ char peek(Stack *target) {
     return target->next->data->opr;
 }
 
-void delete_stack(Stack *head) {
-    Stack *now = head->next;
+void delete_stack(Stack **head) {
+    Stack *now = (*head)->next;
     if (now == NULL) {
-        free(head);
+        free(*head);
     } else {
         while (now->next != NULL) {
-            head->next = now->next;
+            (*head)->next = now->next;
             free(now);
-            now = head->next;
+            now = (*head)->next;
         }
-        free(head);
+        free(*head);
     }
 }
 
@@ -106,7 +106,7 @@ ExpressHeadTail *eht2: 메모리 해제를 진행할 노드 주소값 (함수 �
 Stack *stack: 삭제 할 스택
 ERROR_TYPE type: 에러 종류
 */
-ExpressHeadTail* print_error_stack(ExpressHeadTail *eht, ExpressHeadTail *eht2, Stack *stack, ERROR_TYPE type) {
+ExpressHeadTail* print_error_stack(ExpressHeadTail **eht, ExpressHeadTail **eht2, Stack **stack, ERROR_TYPE type) {
     alert_error(type);
     delete_stack(stack);
     release_all(eht);
@@ -119,10 +119,10 @@ ExpressHeadTail* print_error_stack(ExpressHeadTail *eht, ExpressHeadTail *eht2, 
 
 ExpressHeadTail *expht: 후위 연산식으로 변경할 표현식
 */
-ExpressHeadTail *infix_to_postfix(ExpressHeadTail *expht) {
+ExpressHeadTail *infix_to_postfix(ExpressHeadTail **expht) {
     Stack *stack = init_stack(); // 스택 초기화
-    Expression *tail = expht->tail; // Expression 링크드 리스트의 마지막 노드
-    Expression *now = expht->head->next; // Expression 링크드 리스트의 두 번째 노드. 첫 번째 노드는 head노드.
+    Expression *tail = (*expht)->tail; // Expression 링크드 리스트의 마지막 노드
+    Expression *now = (*expht)->head->next; // Expression 링크드 리스트의 두 번째 노드. 첫 번째 노드는 head노드.
     ExpressHeadTail *result = init_expression(); // 후위 연산식을 저장할 ExpressHeadTail 구조체
 
     while (now != tail) { // now가 tail일 때 까지 반복
@@ -153,18 +153,18 @@ ExpressHeadTail *infix_to_postfix(ExpressHeadTail *expht) {
             Expression *poped = pop(stack);
             if (poped == NULL) {
                 // stack 안에 아무것도 없을 경우 ( 보다 ) 가 먼저 나왔으므로 오류 처리
-                return print_error_stack(expht, result, stack, ERROR_RIGHT_BRACKET_FRIST);
+                return print_error_stack(expht, &result, &stack, ERROR_RIGHT_BRACKET_FRIST);
             }
             while (poped->opr != '(') { // ( 이 나올 때 까지 반복
                 expression_insert_tail(poped, result->tail); // ( 이 나올 때 까지 pop 후 후위 연산식 링크드 리스트에 추가
                 poped = pop(stack);
                 if (poped == NULL) {
                     // stack 안에 아무것도 없을 경우 ( 보다 ) 가 먼저 나왔으므로 오류 처리
-                    return print_error_stack(expht, result, stack, ERROR_RIGHT_BRACKET_FRIST);
+                    return print_error_stack(expht, &result, &stack, ERROR_RIGHT_BRACKET_FRIST);
                 }
             }
         }
-        now  = expht->head->next; // now를 head의 다음으로 지정
+        now  = (*expht)->head->next; // now를 head의 다음으로 지정
     }
 
     while (!is_empty(stack)) {
@@ -172,6 +172,6 @@ ExpressHeadTail *infix_to_postfix(ExpressHeadTail *expht) {
         expression_insert_tail(pop(stack), result->tail);
     }
 
-    free(expht); // 중위 연산식 ExpressHeadTail는 메모리 해제
+    free(*expht); // 중위 연산식 ExpressHeadTail는 메모리 해제
     return result; // 후위 연산식 반환
 }
