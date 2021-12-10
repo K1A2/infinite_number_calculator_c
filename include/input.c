@@ -47,11 +47,11 @@ bool *is_decimal_show: 소수점이 보였는지 여부 주소값
 */
 void add_number(Number *number, Expression* tail, bool *is_number_struct, bool *is_positive_num, bool *is_decimal_show) {
     // deletee_zero_up_deciaml(number->head, number->tail);
-    if (get_count_digits(number->head, number->tail) == 0) {
-        digit_insert_tail('0', number->tail);
-        digit_insert_tail('0', number->tail);
-        number->deciaml_point = 1;
-    }
+    // if (get_count_digits(number->head, number->tail) == 0) {
+    //     digit_insert_tail('0', number->tail);
+    //     digit_insert_tail('0', number->tail);
+    //     number->deciaml_point = 1;
+    // }
     number->deciaml_point -= deletee_zero_down_deciaml(number->head, number->tail);
     deletee_zero_up_deciaml(number->head, number->tail);
     expression_insert_tail_new_node(TYPE_DIGIT, number, ' ', tail); // 입력 되던 숫자 추가

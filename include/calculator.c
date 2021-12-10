@@ -89,7 +89,16 @@ Expression *multiplication(Expression **a, Expression **b) {
         *b = tmp;
     }
 
-    
+    result->data->deciaml_point = (*a)->data->deciaml_point + (*b)->data->deciaml_point;
+    Digits *now_b = (*b)->data->tail->prev;
+    while (now_b != (*b)->data->head) {
+        Digits *now_a = (*a)->data->tail->prev;
+        Expression * tmp = init_expression();
+        tmp->data->deciaml_point = result->data->deciaml_point;
+        while (now_a != (*a)->data->head) {
+            
+        }
+    }
 }
 
 Number *print_error_calculation(ExpressHeadTail **expht, Stack **stack, Expression *one, Expression *two, Expression *result, ERROR_TYPE error) {
