@@ -39,19 +39,13 @@ void init_number_struct(Number **number, bool *is_positive_num, bool *is_decimal
 /*
 Number 구조체를 Expression 구조체에 추가하는 함수
 
-Number **number: Number 포인터의 주소값
+Number *number: Number 포인터의 주소값
 Expression* tail: 추가 할 Expression의 가장 끝 노드 주소값
 bool *is_number_struct: Number 구조체 편집 중인지 여부 주소값
 bool *is_positive_num: 양수인지 여부 주소값
 bool *is_decimal_show: 소수점이 보였는지 여부 주소값
 */
 void add_number(Number *number, Expression* tail, bool *is_number_struct, bool *is_positive_num, bool *is_decimal_show) {
-    // deletee_zero_up_deciaml(number->head, number->tail);
-    // if (get_count_digits(number->head, number->tail) == 0) {
-    //     digit_insert_tail('0', number->tail);
-    //     digit_insert_tail('0', number->tail);
-    //     number->deciaml_point = 1;
-    // }
     number->deciaml_point -= deletee_zero_down_deciaml(number->head, number->tail);
     deletee_zero_up_deciaml(number->head, number->tail);
     expression_insert_tail_new_node(TYPE_DIGIT, number, ' ', tail); // 입력 되던 숫자 추가
@@ -61,15 +55,16 @@ void add_number(Number *number, Expression* tail, bool *is_number_struct, bool *
 }
 
 /*
-식에 오류가 있을때 오류 출력과 추가하던 구조체를 모두 삭제하는 함수 
+식에 오류가 있을때 오류 출력과 추가하던 구조체를 모두 삭제하는 함수
 
-ExpressHeadTail *eht: 메모리 해제를 진행할 노드 주소값
+ExpressHeadTail **eht: 메모리 해제를 진행할 노드 주소값
 ERROR_TYPE type: 에러 종류
+FILE *fp: 닫을 파일 스트림
 */
 ExpressHeadTail* print_error(ExpressHeadTail **eht, ERROR_TYPE type, FILE *fp) {
-    alert_error(type);
-    release_all(eht);
-    fclose(fp);
+    alert_error(type); // 에러 출력
+    release_all(eht); // 저장하던 식 표현 모두 해제
+    fclose(fp); // 닫을 파일 스트림
     return NULL;
 }
 
@@ -292,7 +287,7 @@ ExpressHeadTail* read_and_anlyze(char *filename) {
                                         expression_insert_tail_new_node(TYPE_OPR, NULL, '*', eht->tail);
                                     }
                                     add_number(number, eht->tail, &is_number_struct, &is_positive_num, &is_decimal_show); // 숫자 추가
-                                    expression_insert_tail_new_node(TYPE_OPR, NULL, in_ch, eht->tail);
+                                    expression_insert_tail_new_node(TYPE_OPR, NULL, in_ch, eht->tail); // * 기호 추가
                                 } else {
                                     // 앞에 숫자가 없다면 오류 처리
                                     // 예) *443
@@ -304,7 +299,7 @@ ExpressHeadTail* read_and_anlyze(char *filename) {
                         }
                     }
                 }
-                prev_ch_first = in_ch;
+                prev_ch_first = in_ch; // 직전에 나온 문자 업데이트
             }
         }
         if (is_number_struct) {
@@ -323,6 +318,7 @@ ExpressHeadTail* read_and_anlyze(char *filename) {
     }
 
     if (prev_ch_first == '*') {
+        // 식의 마지막 문자가 * 면 오류처리
         return print_error(&eht, ERROR_MUTIPLE_OPERATOR_WRONG_POSITION, fp);
     }
 
