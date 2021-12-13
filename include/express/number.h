@@ -31,7 +31,7 @@ typedef struct {
 
 int get_count_digits(Digits* node, Digits* tail);
 int deletee_zero_up_deciaml(Digits* head, Digits* tail);
-int deletee_zero_down_deciaml(Digits* head, Digits* tail);
+int deletee_zero_down_deciaml(Digits* head, Digits* tail, unsigned int decimal_pos);
 
 Number *init_number();
 void digit_insert_head(char value, Digits* node);

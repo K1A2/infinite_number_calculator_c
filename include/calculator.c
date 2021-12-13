@@ -22,24 +22,27 @@ void make_down_place_count_same(Number **a, Number **b, Number **target) {
     (*target)->deciaml_point = (*a)->deciaml_point;
 }
 
+void make_up_place_count_same(Number **a, Number **b, Number **target) {
+    unsigned int a_total_count = get_count_digits((*a)->head, (*a)->tail), b_total_count = get_count_digits((*b)->head, (*b)->tail);
+    if (a_total_count >= b_total_count) {
+        for (int i = 0;i < a_total_count - b_total_count;i++) {
+            digit_insert_head('0', (*b)->head);
+        }
+    } else {
+        for (int i = 0;i < b_total_count - a_total_count;i++) {
+            digit_insert_head('0', (*a)->head);
+        }
+    }
+}
+
 Expression *addition(Expression **a, Expression **b) {
     if ((*a)->data->isPositive != (*b)->data->isPositive) {
-        // subtraction()
+        return subtraction(a, b);
     } else {
         Expression *result = init_expression_empty_noode_number();
 
         make_down_place_count_same(&((*a)->data), &((*b)->data), &(result->data));
-
-        unsigned int a_total_count = get_count_digits((*a)->data->head, (*a)->data->tail), b_total_count = get_count_digits((*b)->data->head, (*b)->data->tail);
-        if (a_total_count >= b_total_count) {
-            for (int i = 0;i < a_total_count - b_total_count;i++) {
-                digit_insert_head('0', (*b)->data->head);
-            }
-        } else {
-            for (int i = 0;i < b_total_count - a_total_count;i++) {
-                digit_insert_head('0', (*a)->data->head);
-            }
-        }
+        make_up_place_count_same(&((*a)->data), &((*b)->data), &(result->data));
 
         Digits *now_a = (*a)->data->tail->prev;
         Digits *now_b = (*b)->data->tail->prev;
@@ -74,6 +77,48 @@ Expression *addition(Expression **a, Expression **b) {
 }
 
 Expression *subtraction(Expression**a, Expression **b) {
+    Expression *result = init_expression_empty_noode_number();
+
+    make_down_place_count_same(&((*a)->data), &((*b)->data), &(result->data));
+
+    unsigned int a_total_count = get_count_digits((*a)->data->head, (*a)->data->tail), b_total_count = get_count_digits((*b)->data->head, (*b)->data->tail);
+    unsigned int a_up_place_count = a_total_count - (*a)->data->deciaml_point, b_up_place_count = b_total_count - (*b)->data->deciaml_point;
+    if (a_up_place_count == b_up_place_count) {
+        Digits *a_now = (*a)->data->head->next, *b_now = (*b)->data->head->next;
+        bool is_same = true;
+        while (a_now != (*a)->data->tail) {
+            if (a_now->data > b_now->data) {
+                is_same = false;
+                break;
+            } else if (a_now->data < b_now->data) {
+                is_same = false;
+                Expression *tmp = *a;
+                *a = *b;
+                *b = tmp;
+                break;
+            }
+
+            a_now = a_now->next;
+            b_now = b_now->next;
+        }
+
+        if (is_same) {
+            release_numbers(&((*a)->data));
+            release_numbers(&((*b)->data));
+            free(*a);
+            free(*b);
+
+            result->data->deciaml_point = 0;
+            return result;
+        }
+    } else {
+        if (a_total_count < b_total_count) {
+            Expression *tmp = *a;
+            *a = *b;
+            *b = tmp;
+        }
+    }
+
 
 }
 
@@ -119,7 +164,7 @@ Expression *multiplication(Expression **a, Expression **b) {
     }
 
     result->data->deciaml_point = (*a)->data->deciaml_point + (*b)->data->deciaml_point;
-    result->data->deciaml_point -= deletee_zero_down_deciaml(result->data->head, result->data->tail);
+    result->data->deciaml_point -= deletee_zero_down_deciaml(result->data->head, result->data->tail, result->data->deciaml_point);
 
     if ((*a)->data->isPositive == (*b)->data->isPositive) {
         result->data->isPositive = true;

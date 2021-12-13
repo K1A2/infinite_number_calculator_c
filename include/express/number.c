@@ -160,11 +160,11 @@ int deletee_zero_up_deciaml(Digits* head, Digits* tail) {
 Digits* head: 0을 제거하려는 숫자의 시작부분
 Digits* tailㅣ 0을 제거하려는 숫자의 끝부분
 */
-int deletee_zero_down_deciaml(Digits* head, Digits* tail) {
+int deletee_zero_down_deciaml(Digits* head, Digits* tail, unsigned int decimal_pos) {
     Digits *now = tail->prev;
     Digits *prev;
     int count = 0;
-    while (now->prev != head && now->data == '0') {
+    while (now->prev != head && now->data == '0' && count <= decimal_pos) {
         now->prev->next = now->next;
         now->next->prev = now->prev;
         now->next = NULL;
@@ -172,6 +172,9 @@ int deletee_zero_down_deciaml(Digits* head, Digits* tail) {
         free(now);
         now = tail->prev;
         count++;
+    }
+    if (count > decimal_pos) {
+        count--;
     }
     return count;
 }
@@ -243,16 +246,20 @@ void print_numbers(Number *numbers) {
     int i = 0;
     int total_count = get_count_digits(numbers->head, numbers->tail);
     if (numbers->deciaml_point >= total_count) {
-        unsigned int diff = numbers->deciaml_point - total_count + 1;
-        putchar('0');
-        putchar('.');
-        for (int i = 0;i < diff - 1;i++) {
+        if (total_count == 0) {
             putchar('0');
-        }
-        Digits *noow = numbers->head->next;
-        while (noow != numbers->tail) {
-            putchar(noow->data);
-            noow = noow->next;
+        } else {
+            unsigned int diff = numbers->deciaml_point - total_count + 1;
+            putchar('0');
+            putchar('.');
+            for (int i = 0;i < diff - 1;i++) {
+                putchar('0');
+            }
+            Digits *noow = numbers->head->next;
+            while (noow != numbers->tail) {
+                putchar(noow->data);
+                noow = noow->next;
+            }
         }
     } else {
         int i = 0;
