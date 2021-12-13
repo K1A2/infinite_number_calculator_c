@@ -121,6 +121,12 @@ Expression *multiplication(Expression **a, Expression **b) {
     result->data->deciaml_point = (*a)->data->deciaml_point + (*b)->data->deciaml_point;
     result->data->deciaml_point -= deletee_zero_down_deciaml(result->data->head, result->data->tail);
 
+    if ((*a)->data->isPositive == (*b)->data->isPositive) {
+        result->data->isPositive = true;
+    } else {
+        result->data->isPositive = false;
+    }
+
     release_numbers(&((*a)->data));
     release_numbers(&((*b)->data));
     free(*a);
