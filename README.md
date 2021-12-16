@@ -1,10 +1,19 @@
 # 무한소수 계산기
 
 ## 실행
+
+### 컴파일
+
+makefile 실행
+
+```shell
+make
+```
+make가 오류가 날 때
 ```shell
 gcc -o main.out main.c include/input.c include/express/number.c include/error.c include/express/stack.c include/calculator.c
 ```
-
+### 실행
 ```shell
 ./main.out
 ```
