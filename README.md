@@ -3,7 +3,9 @@
 ## 실행
 ```shell
 gcc -o main.out main.c include/input.c include/express/number.c include/error.c include/express/stack.c include/calculator.c
+```
 
+```shell
 ./main.out
 ```
 

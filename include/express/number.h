@@ -11,10 +11,9 @@ typedef struct Digits {
 
 typedef struct {
     bool isPositive;
-    Digits *up_decimal_point_head;
-    Digits *down_decimal_point_head;
-    Digits *up_decimal_point_tail;
-    Digits *down_decimal_point_tail;
+    Digits *head;
+    Digits *tail;
+    unsigned int deciaml_point;
 } Number;
 
 typedef struct Expression {
@@ -31,14 +30,14 @@ typedef struct {
 } ExpressHeadTail;
 
 int get_count_digits(Digits* node, Digits* tail);
-void deletee_zero_up_deciaml(Digits* head, Digits* tail);
-void deletee_zero_down_deciaml(Digits* head, Digits* tail);
+int deletee_zero_up_deciaml(Digits* head, Digits* tail);
+int deletee_zero_down_deciaml(Digits* head, Digits* tail, unsigned int decimal_pos);
 
 Number *init_number();
 void digit_insert_head(char value, Digits* node);
 void print_nodes_from_head(Digits* node, Digits* to_node);
 void digit_insert_tail(char value, Digits* node);
-void release_numbers(Number *number);
+void release_numbers(Number **number);
 void release_numbers_concatenated(Number *number);
 
 ExpressHeadTail *init_expression();
@@ -47,5 +46,6 @@ void number_concatenate(Expression *exp);
 void expression_insert_tail(Expression *newNode, Expression* node);
 void expression_insert_tail_new_node(EXPRESSION_TYPE type, Number *data, char opr, Expression* node);
 
-void release_all(ExpressHeadTail *exp);
-void print_all(ExpressHeadTail *expHT);
+void release_all(ExpressHeadTail **exp);
+void print_all(ExpressHeadTail **expHT);
+void print_numbers(Number *numbers);
