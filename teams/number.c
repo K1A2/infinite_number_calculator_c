@@ -4,6 +4,18 @@
 
 #include "number.h"
 
+
+char num(Digits* tail){
+        Digits *now = tail->prev;
+        Digits *next;
+        now->prev->next = now->next;
+        now->next->prev = now->prev;
+        now->next = NULL;
+        now->prev = NULL;
+        char a_d = now->data;
+        free(now);
+        return a_d;
+}
 /*
 ExpressHeadTail 구조체 초기화 함수
 */
@@ -32,21 +44,33 @@ ExpressHeadTail *init_expression() {
 Number 구조체 초기화 함수
 */
 Number *init_number() {
-    Digits *head;
-    Digits *tail;
+    Digits *head_up;
+    Digits *tail_up;
+    int size_up = 0;
+    Digits *head_down;
+    Digits *tail_down;
+    int size_down = 0;
     Number *numbers = malloc(sizeof(Number));
 
-    head = (Digits*)malloc(sizeof(Digits));
-    tail = (Digits*)malloc(sizeof(Digits));
-    head->prev = head;
-    head->next = tail;
-    tail->prev = head;
-    tail->next = tail;
+    head_up = (Digits*)malloc(sizeof(Digits));
+    tail_up = (Digits*)malloc(sizeof(Digits));
+    head_up->prev = head_up;
+    head_up->next = tail_up;
+    tail_up->prev = head_up;
+    tail_up->next = tail_up;
+    size_up = 0;
+    head_down = (Digits*)malloc(sizeof(Digits));
+    tail_down = (Digits*)malloc(sizeof(Digits));
+    head_down->prev = head_down;
+    head_down->next = tail_down;
+    tail_down->prev = head_down;
+    tail_down->next = tail_down;
+    size_down = 0;
 
-    numbers->head = head;
-    numbers->tail = tail;
-    numbers->isPositive = true;
-    numbers->deciaml_point = 0;
+    numbers->up_decimal_point_head = head_up;
+    numbers->down_decimal_point_head = head_down;
+    numbers->up_decimal_point_tail = tail_up;
+    numbers->down_decimal_point_tail = tail_down;
 
     return numbers;
 }
@@ -62,6 +86,13 @@ Expression *init_expression_empty_noode_number() {
     exp->opr = ' ';
     exp->data = init_number();
     return exp;
+}
+
+void number_concatenate(Expression *exp) {
+    if (get_count_digits(exp->data->down_decimal_point_head, exp->data->down_decimal_point_tail) > 0) {
+        exp->data->up_decimal_point_tail->prev->next = exp->data->down_decimal_point_head->next;
+        exp->data->down_decimal_point_head->next->prev = exp->data->up_decimal_point_tail->prev;
+    }
 }
 
 /*
@@ -98,16 +129,37 @@ void expression_insert_tail_new_node(EXPRESSION_TYPE type, Number *data, char op
 
 Number *number: 해제 할 구조체
 */
-void release_numbers(Number **number) {
-    Digits* temp = (*number)->head;
+void release_numbers(Number *number) {
+    Digits* temp = number->up_decimal_point_head;
 	Digits* deleteNode;
-	while (temp != (*number)->tail) {
+	while (temp != number->up_decimal_point_tail) {
 		deleteNode = temp;
 		temp = temp->next;
 		free(deleteNode);
 	}
-    free((*number)->tail);
-    free(*number);
+    free(number->up_decimal_point_tail);
+    temp = number->down_decimal_point_head;
+	while (temp != number->down_decimal_point_tail) {
+		deleteNode = temp;
+		temp = temp->next;
+		free(deleteNode);
+	}
+    free(number->down_decimal_point_tail);
+    free(number);
+}
+
+void release_numbers_concatenated(Number *number) {
+    Digits* temp = number->up_decimal_point_head;
+	Digits* deleteNode;
+	while (temp != number->down_decimal_point_tail) {
+		deleteNode = temp;
+		temp = temp->next;
+		free(deleteNode);
+	}
+    free(number->up_decimal_point_tail);
+    free(number->down_decimal_point_head);
+    free(number->down_decimal_point_tail);
+    free(number);
 }
 
 /*
@@ -115,21 +167,21 @@ void release_numbers(Number **number) {
 
 ExpressHeadTail *exp: 해제 할 숫자 표현
 */
-void release_all(ExpressHeadTail **exp) {
-    Expression* temp = (*exp)->head;
+void release_all(ExpressHeadTail *exp) {
+    Expression* temp = exp->head;
 	Expression* deleteNode;
-    while (temp != (*exp)->tail) {
+    while (temp != exp->tail) {
         deleteNode = temp;
         temp = temp->next;
         if (deleteNode->type == TYPE_DIGIT) {
-            release_numbers(&(deleteNode->data));
+            release_numbers(deleteNode->data);
             free(deleteNode);
         } else {
             free(deleteNode);
         }
     }
-    free((*exp)->tail);
-    free(*exp);
+    free(exp->tail);
+    free(exp);
 }
 
 /*
@@ -138,20 +190,17 @@ void release_all(ExpressHeadTail **exp) {
 Digits* head: 0을 제거하려는 숫자의 시작부분
 Digits* tailㅣ 0을 제거하려는 숫자의 끝부분
 */
-int deletee_zero_up_deciaml(Digits* head, Digits* tail) {
+void deletee_zero_up_deciaml(Digits* head, Digits* tail) {
     Digits *now = head->next;
     Digits *next;
-    int count = 0;
-    while (now != tail && now->data == '0') {
+    while (now->next != tail && now->data == '0') {
         now->prev->next = now->next;
         now->next->prev = now->prev;
         now->next = NULL;
         now->prev = NULL;
         free(now);
         now = head->next;
-        count++;
     }
-    return count;
 }
 
 /*
@@ -160,23 +209,17 @@ int deletee_zero_up_deciaml(Digits* head, Digits* tail) {
 Digits* head: 0을 제거하려는 숫자의 시작부분
 Digits* tailㅣ 0을 제거하려는 숫자의 끝부분
 */
-int deletee_zero_down_deciaml(Digits* head, Digits* tail, unsigned int decimal_pos) {
+void deletee_zero_down_deciaml(Digits* head, Digits* tail) {
     Digits *now = tail->prev;
     Digits *prev;
-    int count = 0;
-    while (now->prev != head && now->data == '0' && count <= decimal_pos) {
+    while (now->prev != head && now->data == '0') {
         now->prev->next = now->next;
         now->next->prev = now->prev;
         now->next = NULL;
         now->prev = NULL;
         free(now);
         now = tail->prev;
-        count++;
     }
-    if (count > decimal_pos) {
-        count--;
-    }
-    return count;
 }
 
 /*
@@ -239,55 +282,30 @@ void print_nodes_from_head(Digits* node, Digits* to_node) {
     }
 }
 
-void print_numbers(Number *numbers) {
-    putchar(' ');
-    if (!numbers->isPositive) {
-        putchar('-');
-    }
-    int i = 0;
-    int total_count = get_count_digits(numbers->head, numbers->tail);
-    if (numbers->deciaml_point >= total_count) {
-        if (total_count == 0) {
-            putchar('0');
-        } else {
-            unsigned int diff = numbers->deciaml_point - total_count + 1;
-            putchar('0');
-            putchar('.');
-            for (int i = 0;i < diff - 1;i++) {
-                putchar('0');
-            }
-            Digits *noow = numbers->head->next;
-            while (noow != numbers->tail) {
-                putchar(noow->data);
-                noow = noow->next;
-            }
-        }
-    } else {
-        int i = 0;
-        Digits *noow = numbers->head->next;
-        while (noow != numbers->tail) {
-            if (i == total_count - numbers->deciaml_point) putchar('.');
-            putchar(noow->data);
-            noow = noow->next;
-            i++;
-        }
-    }
-}
-
 /*
 ExpressHeadTail 안에 있는 모든 표현식을 출력하는 함수
 
 ExpressHeadTail *expHT: ExpressHeadTail 구조체
 */
-void print_all(ExpressHeadTail **expHT) {
-    Expression *now = (*expHT)->head->next;
-    while (now != (*expHT)->tail) {
+void print_all(ExpressHeadTail *expHT) {
+    Expression *now = expHT->head->next;
+    while (now != expHT->tail) {
         if (now->type == TYPE_DIGIT) {
-            print_numbers(now->data);
+            Number *numbers = now->data;
+            putchar(' ');
+            if (!numbers->isPositive) {
+                putchar('-');
+            }
+            print_nodes_from_head(numbers->up_decimal_point_head, numbers->up_decimal_point_tail);
+            putchar('.');
+            print_nodes_from_head(numbers->down_decimal_point_head, numbers->down_decimal_point_tail);
+            putchar(' ');
         } else {
-            printf(" %c", now->opr);
+            printf("%c", now->opr);
         }
         now = now->next;
     }
     putchar('\n');
 }
+
+

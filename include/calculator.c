@@ -22,7 +22,7 @@ void make_down_place_count_same(Number **a, Number **b, Number **target) {
     (*target)->deciaml_point = (*a)->deciaml_point;
 }
 
-void make_up_place_count_same(Number **a, Number **b, Number **target) {
+void make_up_place_count_same(Number **a, Number **b) {
     unsigned int a_total_count = get_count_digits((*a)->head, (*a)->tail), b_total_count = get_count_digits((*b)->head, (*b)->tail);
     if (a_total_count >= b_total_count) {
         for (int i = 0;i < a_total_count - b_total_count;i++) {
@@ -37,12 +37,20 @@ void make_up_place_count_same(Number **a, Number **b, Number **target) {
 
 Expression *addition(Expression **a, Expression **b) {
     if ((*a)->data->isPositive != (*b)->data->isPositive) {
+        if (!(*b)->data->isPositive) {
+            (*b)->data->isPositive = true;
+        } else {
+            (*a)->data->isPositive = true;
+            Expression *tmp = *a;
+            *a = *b;
+            *b = tmp;
+        }
         return subtraction(a, b);
     } else {
         Expression *result = init_expression_empty_noode_number();
 
         make_down_place_count_same(&((*a)->data), &((*b)->data), &(result->data));
-        make_up_place_count_same(&((*a)->data), &((*b)->data), &(result->data));
+        make_up_place_count_same(&((*a)->data), &((*b)->data));
 
         Digits *now_a = (*a)->data->tail->prev;
         Digits *now_b = (*b)->data->tail->prev;
@@ -77,9 +85,18 @@ Expression *addition(Expression **a, Expression **b) {
 }
 
 Expression *subtraction(Expression**a, Expression **b) {
+    if ((*a)->data->isPositive && !(*b)->data->isPositive) { // a = +, b = -
+        (*b)->data->isPositive = true;
+        return addition(a, b);
+    } else if (!(*a)->data->isPositive && (*b)->data->isPositive) { // a = -, b = +
+        (*b)->data->isPositive = false;
+        return addition(a, b);
+    }
     Expression *result = init_expression_empty_noode_number();
 
     make_down_place_count_same(&((*a)->data), &((*b)->data), &(result->data));
+
+    bool is_swap = false;
 
     unsigned int a_total_count = get_count_digits((*a)->data->head, (*a)->data->tail), b_total_count = get_count_digits((*b)->data->head, (*b)->data->tail);
     unsigned int a_up_place_count = a_total_count - (*a)->data->deciaml_point, b_up_place_count = b_total_count - (*b)->data->deciaml_point;
@@ -92,6 +109,7 @@ Expression *subtraction(Expression**a, Expression **b) {
                 break;
             } else if (a_now->data < b_now->data) {
                 is_same = false;
+                is_swap = true;
                 Expression *tmp = *a;
                 *a = *b;
                 *b = tmp;
@@ -112,14 +130,62 @@ Expression *subtraction(Expression**a, Expression **b) {
             return result;
         }
     } else {
-        if (a_total_count < b_total_count) {
+        if (a_up_place_count < b_up_place_count) {
             Expression *tmp = *a;
             *a = *b;
             *b = tmp;
+            is_swap = true;
         }
     }
 
+    make_up_place_count_same(&((*a)->data), &((*b)->data));
 
+    Digits *a_now = (*a)->data->tail->prev, *b_now = (*b)->data->tail->prev;
+    bool is_down = false;
+    while (b_now != (*b)->data->head) {
+        unsigned int a_num = a_now->data - '0', b_num = b_now->data - '0';
+        if (is_down) {
+            if (a_num == 0) {
+                a_num += 9;
+            } else {
+                a_num -= 1;
+                is_down = false;
+            }
+        }
+        if (a_num < b_num) {
+            is_down = true;
+            a_num += 10;
+        }
+        digit_insert_head(a_num - b_num + '0', result->data->head);
+
+        a_now = a_now->prev;
+        b_now = b_now->prev;
+    }
+
+    result->data->deciaml_point = (*a)->data->deciaml_point;
+    result->data->deciaml_point -= deletee_zero_down_deciaml(result->data->head, result->data->tail, result->data->deciaml_point);
+    deletee_zero_up_deciaml(result->data->head, result->data->tail);
+
+    if (is_swap) {
+        if ((*a)->data->isPositive) {
+            result->data->isPositive = false;
+        } else {
+            result->data->isPositive = true;
+        }
+    } else {
+        if ((*a)->data->isPositive) {
+            result->data->isPositive = true;
+        } else {
+            result->data->isPositive = false;
+        }
+    }
+
+    release_numbers(&((*a)->data));
+    release_numbers(&((*b)->data));
+    free(*a);
+    free(*b);
+
+    return result;
 }
 
 Expression *multiplication(Expression **a, Expression **b) {
@@ -210,7 +276,7 @@ Number *calculation(ExpressHeadTail **expht) {
         if (now->type == TYPE_DIGIT) {
             push(stack, now);
         } else {
-            Expression *one = pop(stack), *two = pop(stack), *result = NULL;
+            Expression *two = pop(stack), *one = pop(stack), *result = NULL;
             char op = now->opr;
 
             if (one == NULL || two == NULL) {
