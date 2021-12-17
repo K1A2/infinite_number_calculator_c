@@ -230,11 +230,9 @@ ExpressHeadTail* read_and_anlyze(char *filename) {
                                 if (is_number_struct) {
                                     // 이전에 숫자가 입력된 적이 있다면
                                     add_number(number, eht->tail, &is_number_struct, &is_positive_num, &is_decimal_show);
-                                    if (!is_left_bracket) {
-                                        // ( 가 숫자 다음에 처음 나온거라면 * 기호 추가
-                                        // 예) 333.22(444.33-33) -> 333.22*(444.33-33) 처리
-                                        expression_insert_tail_new_node(TYPE_OPR, NULL, '*', eht->tail);
-                                    }
+                                    // ( 가 숫자 다음에 처음 나온거라면 * 기호 추가
+                                    // 예) 333.22(444.33-33) -> 333.22*(444.33-33) 처리
+                                    expression_insert_tail_new_node(TYPE_OPR, NULL, '*', eht->tail);
                                 }
                             }
                             expression_insert_tail_new_node(TYPE_OPR, NULL, in_ch, eht->tail); // 현재 입력된 ( 추가
