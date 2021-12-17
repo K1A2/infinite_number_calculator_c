@@ -198,11 +198,11 @@ ExpressHeadTail* read_and_anlyze(char *filename) {
                                     expression_insert_tail_new_node(TYPE_OPR, NULL, '*', eht->tail); // * 연산자 추가
                                 }
                                 add_number(number, eht->tail, &is_number_struct, &is_positive_num, &is_decimal_show); // 입력 됬던 숫자 추가
-                                expression_insert_tail_new_node(TYPE_OPR, NULL, in_ch, eht->tail); // 현재 입력된 연산자 - 추가
+                                expression_insert_tail_new_node(TYPE_OPR, NULL, in_ch, eht->tail); // 현재 입력된 연산자 + or - 추가
                             } else {
                                 // 직전에 숫자가 입력 중이 아니었다면
                                 if (is_first || count_op_continue == 2) {
-                                    // -가 식 맨 앞에나 직전에 다른 연산자가 있었을 경우 연산자가 아니라 음수 기호로 판별
+                                    // -가 식 맨 앞에나 직전에 다른 연산자가 있었을 경우 연산자가 아니라 기호로 판별
                                     if (in_ch == '-') {
                                         is_positive_num = false; // 숫자 양수 여부 false 대입
                                     } else {
