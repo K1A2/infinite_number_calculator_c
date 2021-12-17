@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="UArYRPzD0Nau7zTsjRwi" name="페이지-1">
-        <mxGraphModel dx="2671" dy="920" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" background="none" math="0" shadow="0">
+        <mxGraphModel dx="2536" dy="942" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" background="none" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -8,34 +8,36 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-1" value="read_and_analyze 시작" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="80" y="25" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="70" y="18" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="1CAHx74BWBnH9xedqunM-3" target="1CAHx74BWBnH9xedqunM-4" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-3" value="파일에서 1글자&lt;br&gt;읽어오기" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
-                    <mxGeometry x="80" y="145" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="70" y="138" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="1CAHx74BWBnH9xedqunM-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="1CAHx74BWBnH9xedqunM-4" target="1CAHx74BWBnH9xedqunM-5" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
+                <mxCell id="1CAHx74BWBnH9xedqunM-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="1CAHx74BWBnH9xedqunM-4" target="113" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="130" y="633" as="targetPoint"/>
+                    </mxGeometry>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="1CAHx74BWBnH9xedqunM-10" edge="1">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="170" y="295" as="sourcePoint"/>
+                        <mxPoint x="160" y="288" as="sourcePoint"/>
                         <Array as="points">
-                            <mxPoint x="230" y="295"/>
-                            <mxPoint x="230" y="55"/>
+                            <mxPoint x="220" y="288"/>
+                            <mxPoint x="220" y="48"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-4" value="읽어온 글자&lt;br&gt;!= EOF" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="80" y="265" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="70" y="258" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-5" value="return NULL" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="80" y="780" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="70" y="773" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-9" value="false" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="80" y="535" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="80" y="318" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="1CAHx74BWBnH9xedqunM-10" target="1CAHx74BWBnH9xedqunM-16" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -44,34 +46,34 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-10" value="읽어온 글자&lt;br&gt;!= 허용돤 문자" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="250" y="25" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="240" y="18" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fillColor=#a20025;strokeColor=#6F0000;" parent="1" source="1CAHx74BWBnH9xedqunM-16" target="1CAHx74BWBnH9xedqunM-5" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="310" y="810"/>
+                            <mxPoint x="300" y="803"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="1CAHx74BWBnH9xedqunM-16" target="1CAHx74BWBnH9xedqunM-3" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="40" y="435"/>
-                            <mxPoint x="40" y="175"/>
+                            <mxPoint x="30" y="428"/>
+                            <mxPoint x="30" y="168"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-16" value="읽어온 글자&lt;br&gt;== 공백" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="250" y="405" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="240" y="398" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-20" value="true" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="250" y="235" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="240" y="228" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-21" value="false" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="250" y="605" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="290" y="458" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-22" value="true" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="210" y="435" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="200" y="428" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-29" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="1CAHx74BWBnH9xedqunM-23" target="1CAHx74BWBnH9xedqunM-27" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -80,28 +82,28 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-23" value="읽어온 글자&lt;br&gt;== 숫자" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="410" y="25" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="400" y="18" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-25" value="false" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="360" y="25" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="350" y="18" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-26" value="true" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="230" y="160" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="170" y="288" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="1CAHx74BWBnH9xedqunM-27" target="1CAHx74BWBnH9xedqunM-28" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-27" value="연속으로 나온&lt;br&gt;연산자 개수 0 초기화" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="410" y="115" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="400" y="108" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-34" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="1CAHx74BWBnH9xedqunM-28" target="1CAHx74BWBnH9xedqunM-32" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-28" value="식의 가장 앞 부분 여부&lt;br&gt;false" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="410" y="205" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="400" y="198" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-31" value="true" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="410" y="85" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="410" y="73" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-35" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="1CAHx74BWBnH9xedqunM-32" target="1CAHx74BWBnH9xedqunM-33" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -109,55 +111,55 @@
                 <mxCell id="1CAHx74BWBnH9xedqunM-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="1CAHx74BWBnH9xedqunM-32" target="1CAHx74BWBnH9xedqunM-37" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="380" y="325"/>
-                            <mxPoint x="380" y="505"/>
+                            <mxPoint x="370" y="318"/>
+                            <mxPoint x="370" y="498"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-32" value="Number 구조체&lt;br&gt;입력 중이 아니었다면" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="410" y="295" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="400" y="288" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-38" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="1CAHx74BWBnH9xedqunM-33" target="1CAHx74BWBnH9xedqunM-37" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-33" value="Number 구조체&lt;br&gt;초기화" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="410" y="385" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="400" y="378" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-36" value="true" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="410" y="355" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="410" y="348" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-42" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="1CAHx74BWBnH9xedqunM-37" target="1CAHx74BWBnH9xedqunM-41" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-37" value="Number 구조체&lt;br&gt;끝부분에 숫자 추가" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="410" y="475" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="400" y="468" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-40" value="false" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="370" y="295" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="360" y="288" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-44" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="1CAHx74BWBnH9xedqunM-41" target="1CAHx74BWBnH9xedqunM-43" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-41" value="소숫점이 이전에&lt;br&gt;보인적이 있다면" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="410" y="565" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="400" y="558" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-46" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="1CAHx74BWBnH9xedqunM-43" target="1CAHx74BWBnH9xedqunM-45" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-43" value="소수점 위치 +1" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="410" y="675" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="400" y="668" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-47" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="1CAHx74BWBnH9xedqunM-45" target="1CAHx74BWBnH9xedqunM-3" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="470" y="860"/>
-                            <mxPoint x="40" y="860"/>
-                            <mxPoint x="40" y="175"/>
+                            <mxPoint x="460" y="853"/>
+                            <mxPoint x="30" y="853"/>
+                            <mxPoint x="30" y="168"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-45" value="이전 문자 업데이트" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="410" y="765" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="400" y="758" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-51" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="1CAHx74BWBnH9xedqunM-48" target="1CAHx74BWBnH9xedqunM-50" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -166,7 +168,7 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-48" value="연속으로 나온 연산자&lt;br&gt;수 3개 이상" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="590" y="25" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="580" y="18" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-56" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="1CAHx74BWBnH9xedqunM-50" target="1CAHx74BWBnH9xedqunM-54" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -174,24 +176,24 @@
                 <mxCell id="1CAHx74BWBnH9xedqunM-77" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fillColor=#a20025;strokeColor=#6F0000;" parent="1" source="1CAHx74BWBnH9xedqunM-50" target="1CAHx74BWBnH9xedqunM-5" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="570" y="145"/>
-                            <mxPoint x="570" y="640"/>
-                            <mxPoint x="310" y="640"/>
-                            <mxPoint x="310" y="810"/>
+                            <mxPoint x="560" y="138"/>
+                            <mxPoint x="560" y="633"/>
+                            <mxPoint x="300" y="633"/>
+                            <mxPoint x="300" y="803"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-50" value="입력된 문자&lt;br&gt;== (" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="590" y="115" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="580" y="108" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-53" value="( 개수 +1" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="590" y="205" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="580" y="198" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-57" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="1CAHx74BWBnH9xedqunM-54" target="1CAHx74BWBnH9xedqunM-55" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-54" value="연속으로 나온&lt;br&gt;연산자 개수 0" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="590" y="295" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="580" y="288" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-61" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="1CAHx74BWBnH9xedqunM-55" target="1CAHx74BWBnH9xedqunM-60" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -199,28 +201,28 @@
                 <mxCell id="1CAHx74BWBnH9xedqunM-64" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="1CAHx74BWBnH9xedqunM-55" target="1CAHx74BWBnH9xedqunM-63" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="730" y="415"/>
-                            <mxPoint x="730" y="595"/>
+                            <mxPoint x="720" y="408"/>
+                            <mxPoint x="720" y="588"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-55" value="이전에 나온 문자&lt;br&gt;== -" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="590" y="385" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="580" y="378" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-58" value="true" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="590" y="85" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="590" y="78" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-59" value="true" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="590" y="175" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="590" y="168" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-66" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="1CAHx74BWBnH9xedqunM-60" target="1CAHx74BWBnH9xedqunM-63" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-60" value="-1 Number 구조체와&lt;br&gt;* 연산자 Expression&lt;br&gt;추가" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="590" y="475" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="580" y="468" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-62" value="true" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="590" y="445" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="590" y="435" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-68" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="1CAHx74BWBnH9xedqunM-63" target="1CAHx74BWBnH9xedqunM-67" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -228,39 +230,39 @@
                 <mxCell id="1CAHx74BWBnH9xedqunM-70" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fillColor=#a20025;strokeColor=#6F0000;" parent="1" source="1CAHx74BWBnH9xedqunM-63" target="1CAHx74BWBnH9xedqunM-5" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="570" y="595"/>
-                            <mxPoint x="570" y="640"/>
-                            <mxPoint x="310" y="640"/>
-                            <mxPoint x="310" y="810"/>
+                            <mxPoint x="560" y="588"/>
+                            <mxPoint x="560" y="633"/>
+                            <mxPoint x="300" y="633"/>
+                            <mxPoint x="300" y="803"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-63" value="이전에 나온 문자&lt;br&gt;== +" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="590" y="565" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="580" y="558" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-65" value="false" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="680" y="415" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="670" y="408" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-74" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="1CAHx74BWBnH9xedqunM-67" target="1CAHx74BWBnH9xedqunM-72" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-67" value="( Exprssion 추가" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="590" y="655" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="580" y="648" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-69" value="true" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="590" y="625" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="590" y="618" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-71" value="false" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="560" y="560" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="550" y="553" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-75" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#1ba1e2;strokeColor=#006EAF;" parent="1" source="1CAHx74BWBnH9xedqunM-72" target="1CAHx74BWBnH9xedqunM-45" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-72" value="( 출현 여부 true&lt;br&gt;식의 가장 첫 부분 true" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="590" y="745" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="580" y="738" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-78" value="false" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="550" y="115" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="540" y="108" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-83" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="1CAHx74BWBnH9xedqunM-79" target="1CAHx74BWBnH9xedqunM-82" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -268,53 +270,53 @@
                 <mxCell id="1CAHx74BWBnH9xedqunM-91" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="1CAHx74BWBnH9xedqunM-79" target="1CAHx74BWBnH9xedqunM-90" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="900" y="55"/>
-                            <mxPoint x="900" y="325"/>
+                            <mxPoint x="890" y="48"/>
+                            <mxPoint x="890" y="318"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-79" value="식의 가장 첫 부분 &amp;amp;&amp;amp;&lt;br&gt;연속으로 나온 연산자&lt;br&gt;2개 이상" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="760" y="25" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="750" y="18" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-81" value="false" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="700" y="55" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="690" y="48" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-86" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="1CAHx74BWBnH9xedqunM-82" target="1CAHx74BWBnH9xedqunM-53" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="820" y="235"/>
+                            <mxPoint x="810" y="228"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-87" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fillColor=#a20025;strokeColor=#6F0000;" parent="1" source="1CAHx74BWBnH9xedqunM-82" target="1CAHx74BWBnH9xedqunM-5" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="750" y="145"/>
-                            <mxPoint x="750" y="280"/>
-                            <mxPoint x="570" y="280"/>
-                            <mxPoint x="570" y="640"/>
-                            <mxPoint x="310" y="640"/>
-                            <mxPoint x="310" y="810"/>
+                            <mxPoint x="740" y="138"/>
+                            <mxPoint x="740" y="273"/>
+                            <mxPoint x="560" y="273"/>
+                            <mxPoint x="560" y="633"/>
+                            <mxPoint x="300" y="633"/>
+                            <mxPoint x="300" y="803"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-82" value="현재 입력된 문자 == (&lt;br&gt;&amp;amp;&amp;amp; 이전에 입력된 문자&lt;br&gt;+ or -" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="760" y="115" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="750" y="108" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-85" value="true" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="820" y="175" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="800" y="168" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-88" value="false" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="740" y="155" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="730" y="148" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-94" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="1CAHx74BWBnH9xedqunM-90" target="1CAHx74BWBnH9xedqunM-93" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-90" value="연속으로 나온&lt;br&gt;연산자 개수 +1" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="760" y="295" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="750" y="288" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-92" value="false" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="850" y="55" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="840" y="48" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-97" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="1CAHx74BWBnH9xedqunM-93" target="1CAHx74BWBnH9xedqunM-96" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -323,17 +325,17 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-93" value="입력된 문자&lt;br&gt;== ." style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="760" y="385" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="750" y="378" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-98" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fillColor=#a20025;strokeColor=#6F0000;" parent="1" source="1CAHx74BWBnH9xedqunM-96" target="1CAHx74BWBnH9xedqunM-5" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="750" y="505"/>
-                            <mxPoint x="750" y="550"/>
-                            <mxPoint x="570" y="550"/>
-                            <mxPoint x="570" y="640"/>
-                            <mxPoint x="310" y="640"/>
-                            <mxPoint x="310" y="810"/>
+                            <mxPoint x="740" y="498"/>
+                            <mxPoint x="740" y="543"/>
+                            <mxPoint x="560" y="543"/>
+                            <mxPoint x="560" y="633"/>
+                            <mxPoint x="300" y="633"/>
+                            <mxPoint x="300" y="803"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
@@ -341,10 +343,10 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-96" value="이전에 소수점이&lt;br&gt;보인적 없다면" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="760" y="475" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="750" y="468" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-99" value="false" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="740" y="505" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="730" y="498" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-105" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="1CAHx74BWBnH9xedqunM-101" target="1CAHx74BWBnH9xedqunM-104" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -352,43 +354,43 @@
                 <mxCell id="1CAHx74BWBnH9xedqunM-109" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="1CAHx74BWBnH9xedqunM-101" target="1CAHx74BWBnH9xedqunM-107" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="900" y="595"/>
-                            <mxPoint x="900" y="775"/>
+                            <mxPoint x="890" y="588"/>
+                            <mxPoint x="890" y="768"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-101" value="Number 구조체&lt;br&gt;입력 중이 아니었다면" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="760" y="565" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="750" y="558" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-103" value="true" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="820" y="535" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="800" y="528" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-108" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="1CAHx74BWBnH9xedqunM-104" target="1CAHx74BWBnH9xedqunM-107" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-104" value="Number 구조체&lt;br&gt;초기화" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="760" y="655" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="750" y="648" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-106" value="true" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="820" y="625" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="800" y="618" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-112" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fillColor=#1ba1e2;strokeColor=#006EAF;" parent="1" source="1CAHx74BWBnH9xedqunM-107" target="1CAHx74BWBnH9xedqunM-45" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="820" y="845"/>
-                            <mxPoint x="560" y="845"/>
-                            <mxPoint x="560" y="795"/>
+                            <mxPoint x="810" y="838"/>
+                            <mxPoint x="550" y="838"/>
+                            <mxPoint x="550" y="788"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-107" value="소수점이 보였는지 여부 true&lt;br&gt;연속으로 보인 연산자 수 0" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="760" y="745" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="750" y="738" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-110" value="false" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="850" y="605" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="840" y="598" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-113" value="true" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="820" y="445" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="800" y="438" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-118" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="1CAHx74BWBnH9xedqunM-114" target="1CAHx74BWBnH9xedqunM-117" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -397,19 +399,19 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-114" value="입력된 문자&lt;br&gt;== - or +" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="940" y="25" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="930" y="18" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-116" value="false" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="860" y="415" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="850" y="408" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-121" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="1CAHx74BWBnH9xedqunM-117" target="1CAHx74BWBnH9xedqunM-120" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-117" value="( 보인 여부 false" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="940" y="115" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="930" y="108" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-119" value="true" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="1000" y="85" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="980" y="78" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-123" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="1CAHx74BWBnH9xedqunM-120" target="1CAHx74BWBnH9xedqunM-122" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -417,13 +419,13 @@
                 <mxCell id="1CAHx74BWBnH9xedqunM-134" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="1CAHx74BWBnH9xedqunM-120" target="1CAHx74BWBnH9xedqunM-132" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="1090" y="235"/>
-                            <mxPoint x="1090" y="595"/>
+                            <mxPoint x="1080" y="228"/>
+                            <mxPoint x="1080" y="588"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-120" value="Number 구조체&lt;br&gt;입력 중이었다면" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="940" y="205" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="930" y="198" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-126" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="1CAHx74BWBnH9xedqunM-122" target="1CAHx74BWBnH9xedqunM-125" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -431,41 +433,41 @@
                 <mxCell id="1CAHx74BWBnH9xedqunM-130" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="1CAHx74BWBnH9xedqunM-122" target="1CAHx74BWBnH9xedqunM-128" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="1080" y="325"/>
-                            <mxPoint x="1080" y="505"/>
+                            <mxPoint x="1070" y="318"/>
+                            <mxPoint x="1070" y="498"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-122" value=") 입력 여부&lt;br&gt;== true" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="940" y="295" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="930" y="288" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-124" value="true" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="990" y="250" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="980" y="243" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-129" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="1CAHx74BWBnH9xedqunM-125" target="1CAHx74BWBnH9xedqunM-128" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-125" value=") 와 숫자 표현식 사이에&lt;br&gt;* 연산자 추가" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="940" y="385" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="930" y="378" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-127" value="true" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="1000" y="355" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="980" y="348" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="18" style="edgeStyle=none;rounded=0;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;fillColor=#1ba1e2;strokeColor=#006EAF;" parent="1" source="1CAHx74BWBnH9xedqunM-128" target="1CAHx74BWBnH9xedqunM-45" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="910" y="505"/>
-                            <mxPoint x="910" y="845"/>
-                            <mxPoint x="560" y="845"/>
-                            <mxPoint x="560" y="795"/>
+                            <mxPoint x="900" y="498"/>
+                            <mxPoint x="900" y="838"/>
+                            <mxPoint x="550" y="838"/>
+                            <mxPoint x="550" y="788"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-128" value="입력되던 숫자 추가 후&lt;br&gt;+ or - 연산자 추가" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="940" y="475" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="930" y="468" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-131" value="false" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="1030" y="325" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="1020" y="318" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-137" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="1CAHx74BWBnH9xedqunM-132" target="1CAHx74BWBnH9xedqunM-136" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -474,24 +476,24 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-132" value="식의 가장 처음 부분&lt;br&gt;|| 연속으로 나온 연산자 2개" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="940" y="565" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="930" y="558" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-135" value="false" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="1040" y="235" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="1030" y="228" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="16" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;rounded=0;fillColor=#1ba1e2;strokeColor=#006EAF;" parent="1" source="1CAHx74BWBnH9xedqunM-136" target="1CAHx74BWBnH9xedqunM-45" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="1000" y="725"/>
-                            <mxPoint x="910" y="725"/>
-                            <mxPoint x="910" y="845"/>
-                            <mxPoint x="560" y="845"/>
-                            <mxPoint x="560" y="795"/>
+                            <mxPoint x="990" y="718"/>
+                            <mxPoint x="900" y="718"/>
+                            <mxPoint x="900" y="838"/>
+                            <mxPoint x="550" y="838"/>
+                            <mxPoint x="550" y="788"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-136" value="+면 양수&lt;br&gt;-면 음수로 판별" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="940" y="655" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="930" y="648" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-143" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="1CAHx74BWBnH9xedqunM-138" target="1CAHx74BWBnH9xedqunM-142" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -499,40 +501,40 @@
                 <mxCell id="1CAHx74BWBnH9xedqunM-152" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fillColor=#a20025;strokeColor=#6F0000;" parent="1" source="1CAHx74BWBnH9xedqunM-138" target="1CAHx74BWBnH9xedqunM-5" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="1080" y="765"/>
-                            <mxPoint x="1080" y="805"/>
-                            <mxPoint x="920" y="805"/>
-                            <mxPoint x="920" y="875"/>
-                            <mxPoint x="310" y="875"/>
-                            <mxPoint x="310" y="810"/>
+                            <mxPoint x="1060" y="758"/>
+                            <mxPoint x="1060" y="798"/>
+                            <mxPoint x="910" y="798"/>
+                            <mxPoint x="910" y="868"/>
+                            <mxPoint x="300" y="868"/>
+                            <mxPoint x="300" y="803"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-138" value="연속으로 나온 연산자&lt;br&gt;1개" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="940" y="735" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="930" y="728" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-140" value="false" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="920" y="605" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="900" y="598" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-141" value="true" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="1000" y="625" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="980" y="618" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-145" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fillColor=#1ba1e2;strokeColor=#006EAF;" parent="1" source="1CAHx74BWBnH9xedqunM-142" target="1CAHx74BWBnH9xedqunM-45" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="560" y="845"/>
-                            <mxPoint x="560" y="795"/>
+                            <mxPoint x="550" y="838"/>
+                            <mxPoint x="550" y="788"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-142" value="- or + 를 연산자로 보고&lt;br&gt;추가" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="940" y="815" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="930" y="808" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-146" value="true" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="990" y="780" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="980" y="773" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-153" value="false" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="1040" y="735" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="1030" y="728" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="4" value="" style="edgeStyle=none;html=1;" parent="1" source="1CAHx74BWBnH9xedqunM-154" target="2" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -541,16 +543,16 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-154" value="입력된 문자&lt;br&gt;== (" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="1120" y="25" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="1110" y="18" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="1CAHx74BWBnH9xedqunM-156" value="false" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="1060" y="25" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="1050" y="18" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="6" value="" style="edgeStyle=none;html=1;" parent="1" source="2" target="5" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="2" value="( 개수 +1" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="1120" y="115" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="1110" y="108" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="8" value="" style="edgeStyle=none;html=1;" parent="1" source="5" target="7" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -558,13 +560,13 @@
                 <mxCell id="29" style="edgeStyle=none;rounded=0;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5" target="24" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="1260" y="235"/>
-                            <mxPoint x="1260" y="685"/>
+                            <mxPoint x="1250" y="228"/>
+                            <mxPoint x="1250" y="678"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="5" value="이전에 입력된 연산자&lt;br&gt;0개" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="1120" y="205" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="1110" y="198" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="11" value="" style="edgeStyle=none;html=1;" parent="1" source="7" target="10" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -572,25 +574,25 @@
                 <mxCell id="19" style="edgeStyle=none;rounded=0;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="7" target="13" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="1100" y="325"/>
-                            <mxPoint x="1100" y="505"/>
+                            <mxPoint x="1090" y="318"/>
+                            <mxPoint x="1090" y="498"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="7" value="이전에 ) 가 보였는지&lt;br&gt;여부" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="1120" y="295" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="1110" y="288" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="9" value="true" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="1130" y="250" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="1120" y="243" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="14" value="" style="edgeStyle=none;html=1;" parent="1" source="10" target="13" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="10" value=") 와 숫자 표현식 사이에&lt;br&gt;* 기호 추가" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="1120" y="385" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="1110" y="378" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="12" value="true" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="1120" y="355" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="1120" y="348" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="23" value="" style="edgeStyle=none;rounded=0;html=1;" parent="1" source="13" target="22" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -598,83 +600,83 @@
                 <mxCell id="27" style="edgeStyle=none;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="13" target="24" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="1260" y="505"/>
-                            <mxPoint x="1260" y="685"/>
+                            <mxPoint x="1250" y="498"/>
+                            <mxPoint x="1250" y="678"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="13" value="Number 구조체&lt;br&gt;입력 중이었다면" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="1120" y="475" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="1110" y="468" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="20" value="false" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="1090" y="325" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="1080" y="318" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="26" value="" style="edgeStyle=none;rounded=0;html=1;" parent="1" source="22" target="24" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="22" value="입력되던 숫자 추가와&lt;br&gt;* 연산자 추가" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="1120" y="565" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="1110" y="558" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="33" value="" style="edgeStyle=none;rounded=0;html=1;" parent="1" source="24" target="32" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="24" value="( Exprssion 추가" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="1120" y="655" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="1110" y="648" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="30" value="false" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="1210" y="235" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="1200" y="228" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="31" value="false" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="1210" y="505" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="1200" y="498" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="35" value="" style="edgeStyle=none;rounded=0;html=1;" parent="1" source="32" target="34" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="32" value="연속으로 보인 연산자 수 0&lt;br&gt;식의 처음 부분 true" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="1120" y="745" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="1110" y="738" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="36" style="edgeStyle=none;rounded=0;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;fillColor=#1ba1e2;strokeColor=#006EAF;" parent="1" source="34" target="1CAHx74BWBnH9xedqunM-45" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="1090" y="855"/>
-                            <mxPoint x="1090" y="860"/>
-                            <mxPoint x="1090" y="890"/>
-                            <mxPoint x="560" y="890"/>
-                            <mxPoint x="560" y="795"/>
+                            <mxPoint x="1080" y="848"/>
+                            <mxPoint x="1080" y="853"/>
+                            <mxPoint x="1080" y="890"/>
+                            <mxPoint x="550" y="890"/>
+                            <mxPoint x="550" y="788"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="34" value="( 출현 여부 true&lt;br&gt;) 출현 여부 false" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="1120" y="825" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="1110" y="818" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="40" value="" style="edgeStyle=none;rounded=0;html=1;" parent="1" source="37" edge="1">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="1460" y="55" as="targetPoint"/>
+                        <mxPoint x="1450" y="48" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="45" value="" style="edgeStyle=none;rounded=0;html=1;" parent="1" source="37" target="44" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="37" value="입력된 문자&lt;br&gt;== )" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="1290" y="25" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="1280" y="18" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="41" value="false" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="1230" y="25" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="1220" y="18" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="42" value="false" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="1400" y="25" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="1390" y="18" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="80" value="" style="edgeStyle=none;rounded=0;html=1;" parent="1" source="43" target="79" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="43" value="그 외 입력 (*)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="1460" y="25" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="1450" y="18" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="47" value="" style="edgeStyle=none;rounded=0;html=1;" parent="1" source="44" target="46" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="44" value=") 개수 +1" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="1290" y="115" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="1280" y="108" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="49" value="" style="edgeStyle=none;rounded=0;html=1;" parent="1" source="46" target="48" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -682,62 +684,62 @@
                 <mxCell id="51" style="edgeStyle=none;rounded=0;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fillColor=#a20025;strokeColor=#6F0000;" parent="1" source="46" target="1CAHx74BWBnH9xedqunM-5" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="1270" y="235"/>
-                            <mxPoint x="1270" y="280"/>
-                            <mxPoint x="570" y="280"/>
-                            <mxPoint x="570" y="640"/>
-                            <mxPoint x="310" y="640"/>
-                            <mxPoint x="310" y="810"/>
+                            <mxPoint x="1260" y="228"/>
+                            <mxPoint x="1260" y="273"/>
+                            <mxPoint x="560" y="273"/>
+                            <mxPoint x="560" y="633"/>
+                            <mxPoint x="300" y="633"/>
+                            <mxPoint x="300" y="803"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="46" value="직전에 )가 입력" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="1290" y="205" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="1280" y="198" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="56" value="" style="edgeStyle=none;rounded=0;html=1;" parent="1" source="48" target="55" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="48" value="식의 첫 부분" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="1290" y="295" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="1280" y="288" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="50" value="false" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="1350" y="280" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="1340" y="273" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="52" value="true" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="1260" y="235" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="1250" y="228" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="53" value="" style="endArrow=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;rounded=0;fillColor=#a20025;strokeColor=#6F0000;" parent="1" source="48" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="870" y="370" as="sourcePoint"/>
-                        <mxPoint x="1270" y="280" as="targetPoint"/>
+                        <mxPoint x="860" y="363" as="sourcePoint"/>
+                        <mxPoint x="1260" y="273" as="targetPoint"/>
                         <Array as="points">
-                            <mxPoint x="1270" y="325"/>
+                            <mxPoint x="1260" y="318"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="54" value="true" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="1260" y="295" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="1250" y="288" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="61" value="" style="edgeStyle=none;rounded=0;html=1;" parent="1" source="55" target="60" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="55" value="앞에 다른 연산자가&lt;br&gt;존재할 때" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="1290" y="385" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="1280" y="378" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="57" value="" style="endArrow=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;rounded=0;fillColor=#a20025;strokeColor=#6F0000;" parent="1" source="55" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="1300" y="335" as="sourcePoint"/>
-                        <mxPoint x="1270" y="320" as="targetPoint"/>
+                        <mxPoint x="1290" y="328" as="sourcePoint"/>
+                        <mxPoint x="1260" y="313" as="targetPoint"/>
                         <Array as="points">
-                            <mxPoint x="1270" y="415"/>
+                            <mxPoint x="1260" y="408"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="58" value="true" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="1260" y="385" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="1250" y="378" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="59" value="false" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="1340" y="355" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="1330" y="348" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="64" value="" style="edgeStyle=none;rounded=0;html=1;" parent="1" source="60" target="63" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -745,17 +747,17 @@
                 <mxCell id="77" style="edgeStyle=none;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="60" target="75" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="1420" y="505"/>
-                            <mxPoint x="1430" y="505"/>
-                            <mxPoint x="1430" y="855"/>
+                            <mxPoint x="1410" y="498"/>
+                            <mxPoint x="1420" y="498"/>
+                            <mxPoint x="1420" y="848"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="60" value="Number 구조체&lt;br&gt;입력 중이었다면" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="1290" y="475" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="1280" y="468" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="62" value="false" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="1340" y="445" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="1330" y="438" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="67" value="" style="edgeStyle=none;rounded=0;html=1;" parent="1" source="63" target="66" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -763,103 +765,103 @@
                 <mxCell id="70" style="edgeStyle=none;rounded=0;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="63" target="68" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="1270" y="595"/>
-                            <mxPoint x="1270" y="775"/>
+                            <mxPoint x="1260" y="588"/>
+                            <mxPoint x="1260" y="768"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="63" value=") 기호가 입력&lt;br&gt;됬었다면" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="1290" y="565" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="1280" y="558" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="65" value="true" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="1340" y="535" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="1330" y="528" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="69" value="" style="edgeStyle=none;rounded=0;html=1;" parent="1" source="66" target="68" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="66" value="* 연산자 추가" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="1290" y="655" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="1280" y="648" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="76" value="" style="edgeStyle=none;rounded=0;html=1;" parent="1" source="68" target="75" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="68" value="입력되던 숫자 추가" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="1290" y="745" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="1280" y="738" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="72" value="false" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="1380" y="505" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="1370" y="498" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="73" value="false" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="1260" y="595" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="1250" y="588" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="74" value="true" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="1340" y="620" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="1330" y="613" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="78" style="edgeStyle=none;rounded=0;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fillColor=#1ba1e2;strokeColor=#006EAF;" parent="1" source="75" target="1CAHx74BWBnH9xedqunM-45" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="1270" y="855"/>
-                            <mxPoint x="1270" y="890"/>
-                            <mxPoint x="1090" y="890"/>
-                            <mxPoint x="560" y="890"/>
-                            <mxPoint x="560" y="795"/>
+                            <mxPoint x="1260" y="848"/>
+                            <mxPoint x="1260" y="890"/>
+                            <mxPoint x="1080" y="890"/>
+                            <mxPoint x="550" y="890"/>
+                            <mxPoint x="550" y="788"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="75" value=") 추가&lt;br&gt;연속 연산자 수 0&lt;br&gt;식 처음부분 fasle&lt;br&gt;) 출현 여부 true" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="1290" y="825" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="1280" y="818" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="82" value="" style="edgeStyle=none;rounded=0;html=1;" parent="1" source="79" target="81" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="79" value="( 보인 여부 false" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="1460" y="115" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="1450" y="108" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="86" value="" style="edgeStyle=none;rounded=0;html=1;" parent="1" source="81" target="85" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="81" value="식의 첫 부분 true" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="1460" y="205" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="1450" y="198" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="83" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;rounded=0;fillColor=#a20025;strokeColor=#6F0000;" parent="1" target="81" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="1270" y="280" as="sourcePoint"/>
-                        <mxPoint x="1280" y="210" as="targetPoint"/>
+                        <mxPoint x="1260" y="273" as="sourcePoint"/>
+                        <mxPoint x="1270" y="203" as="targetPoint"/>
                         <Array as="points">
-                            <mxPoint x="1440" y="280"/>
-                            <mxPoint x="1440" y="235"/>
+                            <mxPoint x="1430" y="273"/>
+                            <mxPoint x="1430" y="228"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="84" value="true" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="1430" y="235" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="1420" y="228" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="91" value="" style="edgeStyle=none;rounded=0;html=1;" parent="1" source="85" target="90" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="85" value="바로앞에 연산자가&lt;br&gt;1개 이상 있다면" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="1460" y="295" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="1450" y="288" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="87" value="false" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="1510" y="265" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="1500" y="258" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="88" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;rounded=0;fillColor=#a20025;strokeColor=#6F0000;" parent="1" target="85" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="1440" y="280" as="sourcePoint"/>
-                        <mxPoint x="1470" y="245" as="targetPoint"/>
+                        <mxPoint x="1430" y="273" as="sourcePoint"/>
+                        <mxPoint x="1460" y="238" as="targetPoint"/>
                         <Array as="points">
-                            <mxPoint x="1440" y="325"/>
+                            <mxPoint x="1430" y="318"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="89" value="true" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="1430" y="295" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="1420" y="288" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="93" value="" style="edgeStyle=none;rounded=0;html=1;" parent="1" source="90" target="92" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="90" value="Number 구조체&lt;br&gt;입력 중이었다면" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="1460" y="385" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="1450" y="378" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="95" value="" style="edgeStyle=none;rounded=0;html=1;" parent="1" source="92" target="94" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -867,77 +869,80 @@
                 <mxCell id="105" style="edgeStyle=none;rounded=0;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="92" target="96" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="1440" y="505"/>
-                            <mxPoint x="1440" y="685"/>
+                            <mxPoint x="1430" y="498"/>
+                            <mxPoint x="1430" y="678"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="92" value=") 기호가 입력&lt;br&gt;됬었다면" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="1460" y="475" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="1450" y="468" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="97" value="" style="edgeStyle=none;rounded=0;html=1;" parent="1" source="94" target="96" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="94" value="* 연산자 추가" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="1460" y="565" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="1450" y="558" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="99" value="" style="edgeStyle=none;rounded=0;html=1;" parent="1" source="96" target="98" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="96" value="입력되던 숫자 추가" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="1460" y="655" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="1450" y="648" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="108" value="" style="edgeStyle=none;rounded=0;html=1;" parent="1" source="98" target="107" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="98" value="* 연산자 추가" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="1460" y="745" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="1450" y="738" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="100" value="" style="endArrow=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;rounded=0;fillColor=#a20025;strokeColor=#6F0000;" parent="1" source="90" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="1310" y="440" as="sourcePoint"/>
-                        <mxPoint x="1440" y="320" as="targetPoint"/>
+                        <mxPoint x="1300" y="433" as="sourcePoint"/>
+                        <mxPoint x="1430" y="313" as="targetPoint"/>
                         <Array as="points">
-                            <mxPoint x="1440" y="415"/>
+                            <mxPoint x="1430" y="408"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="101" value="false" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="1430" y="385" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="1420" y="378" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="102" value="false" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="1510" y="355" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="1500" y="348" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="103" value="true" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="1510" y="445" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="1500" y="438" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="104" value="true" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="1510" y="530" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="1500" y="523" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="106" value="false" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="1430" y="505" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="1420" y="498" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="107" value=") 출현 여부 false" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="1460" y="825" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="1450" y="818" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="109" value="" style="endArrow=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;rounded=0;fillColor=#1ba1e2;strokeColor=#006EAF;" parent="1" source="107" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="1440" y="885" as="sourcePoint"/>
-                        <mxPoint x="1270" y="890" as="targetPoint"/>
+                        <mxPoint x="1430" y="878" as="sourcePoint"/>
+                        <mxPoint x="1260" y="890" as="targetPoint"/>
                         <Array as="points">
-                            <mxPoint x="1440" y="855"/>
-                            <mxPoint x="1440" y="890"/>
+                            <mxPoint x="1430" y="848"/>
+                            <mxPoint x="1430" y="890"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="110" value="true" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-                    <mxGeometry x="1180" y="85" width="60" height="30" as="geometry"/>
+                <mxCell id="110" value="true" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="1160" y="78" width="60" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="111" value="true" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-                    <mxGeometry x="1350" y="85" width="60" height="30" as="geometry"/>
+                <mxCell id="111" value="true" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="1330" y="78" width="60" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="112" value="true" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-                    <mxGeometry x="820" y="80" width="60" height="30" as="geometry"/>
+                <mxCell id="112" value="true" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="800" y="78" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="113" value="return ExpressionHeadTail" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="70" y="668" width="120" height="60" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
