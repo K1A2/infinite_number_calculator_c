@@ -166,6 +166,9 @@ ExpressHeadTail* read_and_anlyze(char *filename) {
                                 expression_insert_tail_new_node(TYPE_OPR, NULL, in_ch, eht->tail);
                             }
                             is_left_bracket = true;
+                        } else if (in_ch == ')') {
+                            // ) 앞에 연산자가 하나라도 있으면 오류 처리
+                            return print_error(&eht, ERROR_RIGHT_BRACKET_AFTER_OPERATOR, fp);
                         } else {
                             // 식의 처음 부분에 연속으로 나온 연산자 개수가 2개 이상이라면 오류 발생 (예. -+39.3, +-344.2 등)
                             return print_error(&eht, ERROR_OPERATOR_FIRST_ERROR, fp);
@@ -180,6 +183,7 @@ ExpressHeadTail* read_and_anlyze(char *filename) {
                                 if (!is_number_struct) {
                                     // 숫자보다 소숫점이 먼저 보였다면 Number 구조체 초기화 (예. .09490 입략 -> 0.09490 으로 처리)
                                     init_number_struct(&number, &is_positive_num, &is_decimal_show, true, &is_number_struct, &is_left_bracket);
+                                    is_first = false; // 숫자가 추가되었으므로 식의 처음 부분이 아니라고 판단
                                 }
                                 is_decimal_show = true; // 소수점이 보였다는 뜻으로 true 대입
                                 count_op_continue = 0; // 연속으로 보인 연산자 수 0으로 초기화

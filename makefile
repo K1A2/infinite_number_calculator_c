@@ -1,5 +1,5 @@
 main.out: main.c input.o error.o calculator.o stack.o number.o
-	gcc -o main.out main.c input.o error.o calculator.o stack.o number.o
+	gcc -o main.exe main.c input.o error.o calculator.o stack.o number.o
 	make clear
 
 calculator.o: include/calculator.c include/calculator.h

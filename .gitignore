@@ -3,3 +3,4 @@
 **/*.o
 main.out.dSYM/
 *.DS_Store
+*.exe
