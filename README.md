@@ -133,6 +133,18 @@ input 파일에서 식을 수정하면 됩니다.
 
   * 실습때 배운 원리와 같음
 
+  * addition함수
+
+    ![addition 계산 과정](./img/calculation_add_background.png)
+
+  * subtraction 함수
+
+    ![subtraction 계산 과정](./img/calculation_subtraction_background.png)
+
+  * multiplication 함수
+
+    ![subtraction 계산 과정](./img/calculation_multiplication_background.png)
+
 * 관련 파일
 
   * /inlcude/calculator.c
