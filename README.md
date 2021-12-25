@@ -1,5 +1,7 @@
 # 무한소수 계산기
+
 <img src="https://img.shields.io/badge/C-A8B9CC?style=for-the-badge&logo=C&logoColor=white">
+
 ## 실행
 
 ### 컴파일
@@ -174,3 +176,5 @@ input 파일에서 식을 수정하면 됩니다.
 * 관련 파일
   * /include/error.h
   * /include/error.c
+
+
